@@ -11,12 +11,18 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    // MARK: - Properties
     var window: UIWindow?
+    private let rootDependencyContainer = RootDependencyContainer()
 
+    // MARK: - UIApplicationDelegate protocol
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
-        // Override point for customization after application launch.
+        let vc: RootViewController = self.rootDependencyContainer.makeRootViewController()
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = vc
+        self.window?.makeKeyAndVisible()
         return true
     }
 }

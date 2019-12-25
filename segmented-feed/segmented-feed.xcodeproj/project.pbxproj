@@ -7,18 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4F364AFA23B39A8D00865533 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F364AF723B39A8D00865533 /* LaunchScreen.storyboard */; };
-		4F364AFB23B39A8D00865533 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F364AF923B39A8D00865533 /* Info.plist */; };
+		4F1B720923B3B47F00581A6D /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1B720823B3B47F00581A6D /* RootViewController.xib */; };
+		4F1B720B23B3B4FC00581A6D /* RootDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1B720A23B3B4FC00581A6D /* RootDependencyContainer.swift */; };
 		4F364AFD23B39A9A00865533 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F364AFC23B39A9A00865533 /* AppDelegate.swift */; };
 		4F364AFF23B39BCC00865533 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F364AFE23B39BCC00865533 /* BaseViewController.swift */; };
+		4F364B0123B39C4100865533 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F364B0023B39C4100865533 /* RootViewController.swift */; };
+		4F364B0523B3B03600865533 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F364B0423B3B03600865533 /* RootViewModel.swift */; };
+		4F364B0823B3B07700865533 /* RootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F364B0723B3B07700865533 /* RootModel.swift */; };
+		4F364B1223B3B1D600865533 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F364B0F23B3B1D600865533 /* LaunchScreen.storyboard */; };
 		4F5EAFC423B390310024D33E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5EAFC323B390310024D33E /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4F364AF823B39A8D00865533 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		4F364AF923B39A8D00865533 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F1B720823B3B47F00581A6D /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		4F1B720A23B3B4FC00581A6D /* RootDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootDependencyContainer.swift; sourceTree = "<group>"; };
 		4F364AFC23B39A9A00865533 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F364AFE23B39BCC00865533 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		4F364B0023B39C4100865533 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		4F364B0423B3B03600865533 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		4F364B0723B3B07700865533 /* RootModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootModel.swift; sourceTree = "<group>"; };
+		4F364B1023B3B1D600865533 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4F364B1123B3B1D600865533 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F5EAFB723B3902C0024D33E /* segmented-feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "segmented-feed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5EAFC323B390310024D33E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -41,7 +50,7 @@
 				4F364AE623B3998B00865533 /* DataLayer */,
 				4F364AE323B3998B00865533 /* Extensions */,
 				4F364AE223B3998B00865533 /* Managers */,
-				4F364AF623B39A8D00865533 /* SupportFiles */,
+				4F364B0E23B3B1D600865533 /* SupportFiles */,
 				4F364AEB23B3998B00865533 /* UILayer */,
 				4F364AE423B3998B00865533 /* Utilities */,
 			);
@@ -128,8 +137,10 @@
 		4F364AED23B3998B00865533 /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				4F364AEE23B3998B00865533 /* ViewModel */,
+				4F1B720A23B3B4FC00581A6D /* RootDependencyContainer.swift */,
+				4F364B0623B3B06300865533 /* Model */,
 				4F364AEF23B3998B00865533 /* View */,
+				4F364AEE23B3998B00865533 /* ViewModel */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -137,6 +148,7 @@
 		4F364AEE23B3998B00865533 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4F364B0423B3B03600865533 /* RootViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -144,6 +156,8 @@
 		4F364AEF23B3998B00865533 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4F364B0023B39C4100865533 /* RootViewController.swift */,
+				4F1B720823B3B47F00581A6D /* RootViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -156,11 +170,19 @@
 			path = _UIBaseClasses;
 			sourceTree = "<group>";
 		};
-		4F364AF623B39A8D00865533 /* SupportFiles */ = {
+		4F364B0623B3B06300865533 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4F364AF723B39A8D00865533 /* LaunchScreen.storyboard */,
-				4F364AF923B39A8D00865533 /* Info.plist */,
+				4F364B0723B3B07700865533 /* RootModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4F364B0E23B3B1D600865533 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4F364B0F23B3B1D600865533 /* LaunchScreen.storyboard */,
+				4F364B1123B3B1D600865533 /* Info.plist */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -251,8 +273,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F5EAFC423B390310024D33E /* Assets.xcassets in Resources */,
-				4F364AFA23B39A8D00865533 /* LaunchScreen.storyboard in Resources */,
-				4F364AFB23B39A8D00865533 /* Info.plist in Resources */,
+				4F364B1223B3B1D600865533 /* LaunchScreen.storyboard in Resources */,
+				4F1B720923B3B47F00581A6D /* RootViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,16 +307,20 @@
 			files = (
 				4F364AFD23B39A9A00865533 /* AppDelegate.swift in Sources */,
 				4F364AFF23B39BCC00865533 /* BaseViewController.swift in Sources */,
+				4F364B0523B3B03600865533 /* RootViewModel.swift in Sources */,
+				4F364B0823B3B07700865533 /* RootModel.swift in Sources */,
+				4F1B720B23B3B4FC00581A6D /* RootDependencyContainer.swift in Sources */,
+				4F364B0123B39C4100865533 /* RootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4F364AF723B39A8D00865533 /* LaunchScreen.storyboard */ = {
+		4F364B0F23B3B1D600865533 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4F364AF823B39A8D00865533 /* Base */,
+				4F364B1023B3B1D600865533 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -352,6 +378,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(PROJECT_NAME)/source/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -406,6 +433,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(PROJECT_NAME)/source/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -425,7 +453,7 @@
 				DEVELOPMENT_TEAM = J48Y9TAH25;
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				INFOPLIST_FILE = "segmented-feed/Info.plist";
+				INFOPLIST_FILE = "$(PROJECT_NAME)/source/SupportFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -449,7 +477,7 @@
 				DEVELOPMENT_TEAM = J48Y9TAH25;
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				INFOPLIST_FILE = "segmented-feed/Info.plist";
+				INFOPLIST_FILE = "$(PROJECT_NAME)/source/SupportFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
