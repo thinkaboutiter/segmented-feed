@@ -7,18 +7,18 @@
 //
 
 import Foundation
-//import SimpleLogger
+import SimpleLogger
 
 class RootDependencyContainer: RootViewControllerFactory {
     
     // MARK: - Initialization
     init() {
         // setup
-//        Logger.success.message()
+        Logger.success.message()
     }
     
     deinit {
-//        Logger.fatal.message()
+        Logger.fatal.message()
     }
     
     // MARK: - RootViewControllerFactory protocol

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-//import SimpleLogger
+import SimpleLogger
 
 /// APIs for `View` to expose to `ViewModel`
 protocol RootViewModelConsumer: AnyObject {
@@ -28,11 +28,11 @@ class RootViewModelImpl: RootViewModel, RootModelConsumer {
     required init(model: RootModel) {
         self.model = model
         self.model.setModelConsumer(self)
-//        Logger.success.message()
+        Logger.success.message()
     }
     
     deinit {
-//        Logger.fatal.message()
+        Logger.fatal.message()
     }
     
     // MARK: - RootViewModel protocol

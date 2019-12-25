@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4F1B720923B3B47F00581A6D /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1B720823B3B47F00581A6D /* RootViewController.xib */; };
 		4F1B720B23B3B4FC00581A6D /* RootDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1B720A23B3B4FC00581A6D /* RootDependencyContainer.swift */; };
+		4F1B720E23B41D4300581A6D /* SimpleLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 4F1B720D23B41D4300581A6D /* SimpleLogger */; };
 		4F364AFD23B39A9A00865533 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F364AFC23B39A9A00865533 /* AppDelegate.swift */; };
 		4F364AFF23B39BCC00865533 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F364AFE23B39BCC00865533 /* BaseViewController.swift */; };
 		4F364B0123B39C4100865533 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F364B0023B39C4100865533 /* RootViewController.swift */; };
@@ -37,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F1B720E23B41D4300581A6D /* SimpleLogger in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +231,9 @@
 			dependencies = (
 			);
 			name = "segmented-feed";
+			packageProductDependencies = (
+				4F1B720D23B41D4300581A6D /* SimpleLogger */,
+			);
 			productName = "segmented-feed";
 			productReference = 4F5EAFB723B3902C0024D33E /* segmented-feed.app */;
 			productType = "com.apple.product-type.application";
@@ -258,6 +263,9 @@
 				Base,
 			);
 			mainGroup = 4F5EAFAE23B3902C0024D33E;
+			packageReferences = (
+				4F1B720C23B41D4300581A6D /* XCRemoteSwiftPackageReference "SimpleLogger" */,
+			);
 			productRefGroup = 4F5EAFB823B3902C0024D33E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -513,6 +521,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4F1B720C23B41D4300581A6D /* XCRemoteSwiftPackageReference "SimpleLogger" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:thinkaboutiter/SimpleLogger.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4F1B720D23B41D4300581A6D /* SimpleLogger */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F1B720C23B41D4300581A6D /* XCRemoteSwiftPackageReference "SimpleLogger" */;
+			productName = SimpleLogger;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4F5EAFAF23B3902C0024D33E /* Project object */;
 }

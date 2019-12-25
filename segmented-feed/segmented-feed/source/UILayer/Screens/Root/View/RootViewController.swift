@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import SimpleLogger
+import SimpleLogger
 
 /// APIs for `DependecyContainer` to expose.
 protocol RootViewControllerFactory {
@@ -34,11 +34,11 @@ class RootViewController: BaseViewController, RootViewModelConsumer {
         self.viewModel = viewModel
         super.init(nibName: String(describing: RootViewController.self), bundle: nil)
         self.viewModel.setViewModelConsumer(self)
-//        Logger.success.message()
+        Logger.success.message()
     }
     
     deinit {
-//        Logger.fatal.message()
+        Logger.fatal.message()
     }
     
     // MARK: - RootViewModelConsumer protocol

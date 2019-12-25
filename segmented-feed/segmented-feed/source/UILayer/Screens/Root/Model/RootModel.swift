@@ -7,7 +7,7 @@
 //
 
 import Foundation
-//import SimpleLogger
+import SimpleLogger
 
 /// APIs for `ViewModel` to expose to `Model`
 protocol RootModelConsumer: AnyObject {
@@ -26,11 +26,11 @@ class RootModelImpl: RootModel {
     
     // MARK: - Initialization
     init() {
-//        Logger.success.message()
+        Logger.success.message()
     }
     
     deinit {
-//        Logger.fatal.message()
+        Logger.fatal.message()
     }
     
     // MARK: - RootModel protocol
