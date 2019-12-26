@@ -16,6 +16,7 @@
 		4F364B0523B3B03600865533 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F364B0423B3B03600865533 /* RootViewModel.swift */; };
 		4F364B0823B3B07700865533 /* RootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F364B0723B3B07700865533 /* RootModel.swift */; };
 		4F364B1223B3B1D600865533 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F364B0F23B3B1D600865533 /* LaunchScreen.storyboard */; };
+		4F3803F323B5627600A765A3 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3803F223B5627600A765A3 /* UIViewController+Extensions.swift */; };
 		4F5EAFC423B390310024D33E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5EAFC323B390310024D33E /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		4F364B0723B3B07700865533 /* RootModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootModel.swift; sourceTree = "<group>"; };
 		4F364B1023B3B1D600865533 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F364B1123B3B1D600865533 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F3803F223B5627600A765A3 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		4F5EAFB723B3902C0024D33E /* segmented-feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "segmented-feed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5EAFC323B390310024D33E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +71,7 @@
 		4F364AE323B3998B00865533 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4F3803F223B5627600A765A3 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				4F364AFD23B39A9A00865533 /* AppDelegate.swift in Sources */,
 				4F364AFF23B39BCC00865533 /* BaseViewController.swift in Sources */,
 				4F364B0523B3B03600865533 /* RootViewModel.swift in Sources */,
+				4F3803F323B5627600A765A3 /* UIViewController+Extensions.swift in Sources */,
 				4F364B0823B3B07700865533 /* RootModel.swift in Sources */,
 				4F1B720B23B3B4FC00581A6D /* RootDependencyContainer.swift in Sources */,
 				4F364B0123B39C4100865533 /* RootViewController.swift in Sources */,
