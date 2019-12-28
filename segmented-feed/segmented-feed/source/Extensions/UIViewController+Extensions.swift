@@ -9,7 +9,6 @@
 import UIKit
 
 // MARK: - Embedding
-
 extension UIViewController {
     
     /// Caseless container for all constants and subtypes used to describe embedding.
