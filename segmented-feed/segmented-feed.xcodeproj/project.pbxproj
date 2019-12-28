@@ -23,6 +23,7 @@
 		4F38040123B5828300A765A3 /* SegmentsDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38040023B5828300A765A3 /* SegmentsDependencyContainer.swift */; };
 		4F38040323B5834600A765A3 /* SegmentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F38040223B5834600A765A3 /* SegmentsViewController.xib */; };
 		4F38040523B7EE1D00A765A3 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38040423B7EE1D00A765A3 /* AppConstants.swift */; };
+		4F38041123B7FD4500A765A3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F38040F23B7FD4500A765A3 /* Localizable.strings */; };
 		4F5EAFC423B390310024D33E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5EAFC323B390310024D33E /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +35,6 @@
 		4F364B0023B39C4100865533 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		4F364B0423B3B03600865533 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		4F364B0723B3B07700865533 /* RootModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootModel.swift; sourceTree = "<group>"; };
-		4F364B1023B3B1D600865533 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F364B1123B3B1D600865533 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F3803F223B5627600A765A3 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		4F3803FA23B5816D00A765A3 /* SegmentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentsModel.swift; sourceTree = "<group>"; };
@@ -43,6 +43,8 @@
 		4F38040023B5828300A765A3 /* SegmentsDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentsDependencyContainer.swift; sourceTree = "<group>"; };
 		4F38040223B5834600A765A3 /* SegmentsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentsViewController.xib; sourceTree = "<group>"; };
 		4F38040423B7EE1D00A765A3 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		4F38041023B7FD4500A765A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4F38041F23B7FFC800A765A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F5EAFB723B3902C0024D33E /* segmented-feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "segmented-feed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5EAFC323B390310024D33E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -271,6 +273,7 @@
 			children = (
 				4F364AE023B3998B00865533 /* source */,
 				4F5EAFC323B390310024D33E /* Assets.xcassets */,
+				4F38040F23B7FD4500A765A3 /* Localizable.strings */,
 			);
 			path = "segmented-feed";
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F38041123B7FD4500A765A3 /* Localizable.strings in Resources */,
 				4F38040323B5834600A765A3 /* SegmentsViewController.xib in Resources */,
 				4F5EAFC423B390310024D33E /* Assets.xcassets in Resources */,
 				4F364B1223B3B1D600865533 /* LaunchScreen.storyboard in Resources */,
@@ -396,9 +400,17 @@
 		4F364B0F23B3B1D600865533 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4F364B1023B3B1D600865533 /* Base */,
+				4F38041F23B7FFC800A765A3 /* en */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		4F38040F23B7FD4500A765A3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F38041023B7FD4500A765A3 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -408,6 +420,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -469,6 +482,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
