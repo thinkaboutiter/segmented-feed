@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+enum AppConstants {
+    enum LocalizedStringComment {
+        static let buttonTitle: String = "Button Title"
+    }
+}

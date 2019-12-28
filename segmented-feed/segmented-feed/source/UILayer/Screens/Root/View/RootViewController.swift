@@ -66,10 +66,24 @@ class RootViewController: BaseViewController, RootViewModelConsumer {
 private extension RootViewController {
     
     func configure_ui() {
-        self.configure_segmentsContainerView()
+        self.configure_segmentsContainerView(self.segmentsContainerView)
+        self.configure_embeddingActionsButton(self.embeddingActionsButton)
     }
     
-    func configure_segmentsContainerView() {
-        self.segmentsContainerView.backgroundColor = UIColor.darkGray
+    func configure_segmentsContainerView(_ view: UIView) {
+        view.backgroundColor = UIColor.darkGray
+    }
+    
+    func configure_embeddingActionsButton(_ button: UIButton) {
+        let embedTitle: String = NSLocalizedString("embeddingActionsButton.title.embed",
+                                                   comment: AppConstants.LocalizedStringComment.buttonTitle)
+        let removeTitle: String = NSLocalizedString("embeddingActionsButton.title.embed",
+        comment: AppConstants.LocalizedStringComment.buttonTitle)
+        let title: String = self.segmentsViewController == nil ? embedTitle : removeTitle
+        button.setTitle(title, for: .normal)
+    }
+}
+    }
+    
     }
 }
