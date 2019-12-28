@@ -13,13 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Properties
     var window: UIWindow?
-    private let rootDependencyContainer = RootDependencyContainerImpl()
+    private let rootViewControllerFactory: RootViewControllerFactory = RootDependencyContainerImpl()
 
     // MARK: - UIApplicationDelegate protocol
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
-        let vc: RootViewController = self.rootDependencyContainer.makeRootViewController()
+        let vc: RootViewController = self.rootViewControllerFactory.makeRootViewController()
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = vc
         self.window?.makeKeyAndVisible()
