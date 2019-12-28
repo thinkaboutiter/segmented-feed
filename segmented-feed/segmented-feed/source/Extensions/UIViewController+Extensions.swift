@@ -17,9 +17,12 @@ extension UIViewController {
         
         /// Caseless container of tuples containing error code and description.
         enum ErrorCodeDescription {
-            static let parentNotNil: (code: Int, description: String) = (9001, "Trying to embed a view controller that already has its parent set!")
-            static let containerViewIsNotUsedAsSuperView: (code: Int, description: String) = (9002, "Passed container_view is not used as child's super_view!")
-            static let childHasDifferentParent: (code: Int, description: String) = (9003, "Passed child_view_controller is not child of this view controller, that is it has different parent and can not be removed form this veiw controller!")
+            static let parentNotNil: (code: Int, description: String)
+                = (9001, "Trying to embed a view controller that already has its parent set!")
+            static let containerViewIsNotUsedAsSuperView: (code: Int, description: String)
+                = (9002, "Passed container_view is not used as child's super_view!")
+            static let childHasDifferentParent: (code: Int, description: String)
+                = (9003, "Passed child_view_controller is not child of this view controller, that is it has different parent and can not be removed form this veiw controller!")
         }
     }
     
