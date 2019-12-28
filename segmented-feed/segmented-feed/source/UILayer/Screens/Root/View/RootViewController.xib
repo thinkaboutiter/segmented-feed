@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RootViewController" customModule="segmented_feed" customModuleProvider="target">
             <connections>
+                <outlet property="segmentsContainerView" destination="HPn-5R-CNB" id="fOc-hh-4G4"/>
                 <outlet property="view" destination="uUd-KY-ArK" id="UHn-S6-lHA"/>
             </connections>
         </placeholder>
@@ -16,7 +17,21 @@
         <view contentMode="scaleToFill" id="uUd-KY-ArK">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HPn-5R-CNB" userLabel="segments-container-view">
+                    <rect key="frame" x="52" y="365" width="310.5" height="166"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="HPn-5R-CNB" secondAttribute="height" multiplier="15:8" id="sE8-v8-PRd"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="HPn-5R-CNB" firstAttribute="width" secondItem="uUd-KY-ArK" secondAttribute="width" multiplier="0.75" id="3sn-Wk-MGa"/>
+                <constraint firstItem="HPn-5R-CNB" firstAttribute="centerY" secondItem="uUd-KY-ArK" secondAttribute="centerY" id="Drc-Yl-S1Q"/>
+                <constraint firstItem="HPn-5R-CNB" firstAttribute="centerX" secondItem="uUd-KY-ArK" secondAttribute="centerX" id="UkS-kf-I3c"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="I8P-3O-wU2"/>
             <point key="canvasLocation" x="-293" y="75"/>
         </view>

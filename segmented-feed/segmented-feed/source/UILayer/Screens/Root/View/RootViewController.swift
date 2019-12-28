@@ -18,6 +18,7 @@ class RootViewController: BaseViewController, RootViewModelConsumer {
     
     // MARK: - Properties
     private let viewModel: RootViewModel
+    @IBOutlet private weak var segmentsContainerView: UIView!
     
     // MARK: - Initialization
     @available(*, unavailable, message: "Creating this view controller with `init(coder:)` is unsupported in favor of initializer dependency injection.")
@@ -46,7 +47,18 @@ class RootViewController: BaseViewController, RootViewModelConsumer {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        self.configure_ui()
+    }
+}
+
+// MARK: - UI configurations
+private extension RootViewController {
+    
+    func configure_ui() {
+        self.configure_segmentsContainerView()
+    }
+    
+    func configure_segmentsContainerView() {
+        self.segmentsContainerView.backgroundColor = UIColor.darkGray
     }
 }
