@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SegmentsViewController" customModule="segmented_feed" customModuleProvider="target">
             <connections>
+                <outlet property="demoLabel" destination="RhP-pK-hFX" id="SeK-3o-btC"/>
                 <outlet property="view" destination="QSp-5I-QJu" id="x0k-lr-1rp"/>
             </connections>
         </placeholder>
@@ -17,7 +18,21 @@
             <view key="view" contentMode="scaleToFill" id="QSp-5I-QJu">
                 <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhP-pK-hFX">
+                        <rect key="frame" x="179" y="190" width="42" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                <constraints>
+                    <constraint firstItem="RhP-pK-hFX" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vTH-PA-nTZ" secondAttribute="top" constant="8" id="Tcg-8D-kDd"/>
+                    <constraint firstItem="RhP-pK-hFX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vTH-PA-nTZ" secondAttribute="leading" constant="8" id="Voh-MB-922"/>
+                    <constraint firstItem="RhP-pK-hFX" firstAttribute="centerY" secondItem="QSp-5I-QJu" secondAttribute="centerY" id="edG-XW-E8W"/>
+                    <constraint firstItem="RhP-pK-hFX" firstAttribute="centerX" secondItem="QSp-5I-QJu" secondAttribute="centerX" id="tGy-rv-vGw"/>
+                </constraints>
                 <viewLayoutGuide key="safeArea" id="vTH-PA-nTZ"/>
             </view>
             <nil key="simulatedTopBarMetrics"/>

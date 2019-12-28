@@ -18,6 +18,7 @@ class SegmentsViewController: BaseViewController, SegmentsViewModelConsumer {
     
     // MARK: - Properties
     private let viewModel: SegmentsViewModel
+    @IBOutlet private weak var demoLabel: UILabel!
     
     // MARK: - Initialization
     @available(*, unavailable, message: "Creating this view controller with `init(coder:)` is unsupported in favor of initializer dependency injection.")
@@ -46,7 +47,19 @@ class SegmentsViewController: BaseViewController, SegmentsViewModelConsumer {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        self.configure_ui()
+    }
+}
+
+// MARK: - Configurations
+private extension SegmentsViewController {
+    
+    func configure_ui() {
+        self.view.backgroundColor = UIColor.orange
+        self.configure_demoLabel()
+    }
+    
+    func configure_demoLabel() {
+        self.demoLabel.text = String(describing: SegmentsViewController.self)
     }
 }
