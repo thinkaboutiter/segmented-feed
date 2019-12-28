@@ -22,6 +22,7 @@
 		4F3803FF23B5822B00A765A3 /* SegmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3803FE23B5822B00A765A3 /* SegmentsViewController.swift */; };
 		4F38040123B5828300A765A3 /* SegmentsDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38040023B5828300A765A3 /* SegmentsDependencyContainer.swift */; };
 		4F38040323B5834600A765A3 /* SegmentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F38040223B5834600A765A3 /* SegmentsViewController.xib */; };
+		4F38040523B7EE1D00A765A3 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38040423B7EE1D00A765A3 /* AppConstants.swift */; };
 		4F5EAFC423B390310024D33E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5EAFC323B390310024D33E /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		4F3803FE23B5822B00A765A3 /* SegmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentsViewController.swift; sourceTree = "<group>"; };
 		4F38040023B5828300A765A3 /* SegmentsDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentsDependencyContainer.swift; sourceTree = "<group>"; };
 		4F38040223B5834600A765A3 /* SegmentsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentsViewController.xib; sourceTree = "<group>"; };
+		4F38040423B7EE1D00A765A3 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		4F5EAFB723B3902C0024D33E /* segmented-feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "segmented-feed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5EAFC323B390310024D33E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +91,7 @@
 		4F364AE423B3998B00865533 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				4F38040423B7EE1D00A765A3 /* AppConstants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				4F3803FF23B5822B00A765A3 /* SegmentsViewController.swift in Sources */,
 				4F3803F323B5627600A765A3 /* UIViewController+Extensions.swift in Sources */,
 				4F364B0823B3B07700865533 /* RootModel.swift in Sources */,
+				4F38040523B7EE1D00A765A3 /* AppConstants.swift in Sources */,
 				4F38040123B5828300A765A3 /* SegmentsDependencyContainer.swift in Sources */,
 				4F3803FB23B5816D00A765A3 /* SegmentsModel.swift in Sources */,
 				4F1B720B23B3B4FC00581A6D /* RootDependencyContainer.swift in Sources */,
