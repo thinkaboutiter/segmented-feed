@@ -27,7 +27,11 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdP-nO-YHS" userLabel="embedding-actions-button">
-                    <rect key="frame" x="184" y="824" width="46" height="30"/>
+                    <rect key="frame" x="177" y="810" width="60" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="qQM-lP-lqm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                     <state key="normal" title="Button"/>
                     <connections>
                         <action selector="embeddingActionsButton_touchUpInside:" destination="-1" eventType="touchUpInside" id="gfW-G5-twe"/>
@@ -36,11 +40,12 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="HPn-5R-CNB" firstAttribute="width" secondItem="uUd-KY-ArK" secondAttribute="width" multiplier="0.75" id="3sn-Wk-MGa"/>
+                <constraint firstItem="HPn-5R-CNB" firstAttribute="width" secondItem="uUd-KY-ArK" secondAttribute="width" multiplier="0.75" priority="750" id="3sn-Wk-MGa"/>
                 <constraint firstItem="HPn-5R-CNB" firstAttribute="centerY" secondItem="uUd-KY-ArK" secondAttribute="centerY" id="Drc-Yl-S1Q"/>
                 <constraint firstItem="HPn-5R-CNB" firstAttribute="centerX" secondItem="uUd-KY-ArK" secondAttribute="centerX" id="UkS-kf-I3c"/>
                 <constraint firstItem="vdP-nO-YHS" firstAttribute="centerX" secondItem="uUd-KY-ArK" secondAttribute="centerX" id="tmY-d7-agd"/>
                 <constraint firstItem="I8P-3O-wU2" firstAttribute="bottom" secondItem="vdP-nO-YHS" secondAttribute="bottom" constant="8" id="w7r-tW-vTR"/>
+                <constraint firstItem="vdP-nO-YHS" firstAttribute="top" relation="greaterThanOrEqual" secondItem="HPn-5R-CNB" secondAttribute="bottom" constant="20" id="wXr-7a-4rV"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="I8P-3O-wU2"/>
             <point key="canvasLocation" x="-293" y="75"/>
