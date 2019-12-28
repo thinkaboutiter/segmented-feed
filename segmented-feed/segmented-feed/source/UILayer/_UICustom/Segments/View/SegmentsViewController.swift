@@ -55,11 +55,15 @@ class SegmentsViewController: BaseViewController, SegmentsViewModelConsumer {
 private extension SegmentsViewController {
     
     func configure_ui() {
-        self.view.backgroundColor = UIColor.orange
-        self.configure_demoLabel()
+        self.configue_view(self.view)
+        self.configure_demoLabel(self.demoLabel)
     }
     
-    func configure_demoLabel() {
-        self.demoLabel.text = String(describing: SegmentsViewController.self)
+    func configue_view(_ view: UIView) {
+        view.backgroundColor = .orange
+    }
+    
+    func configure_demoLabel(_ label: UILabel) {
+        label.text = String(describing: SegmentsViewController.self)
     }
 }
