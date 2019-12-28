@@ -58,7 +58,7 @@ class RootViewController: BaseViewController, RootViewModelConsumer {
     
     // MARK: - Actions
     @IBAction func embeddingActionsButton_touchUpInside(_ sender: UIButton) {
-        
+        Logger.debug.message()
     }
 }
 
@@ -83,7 +83,15 @@ private extension RootViewController {
         button.setTitle(title, for: .normal)
     }
 }
+
+// MARK: - Embedding
+private extension RootViewController {
+    
+    func embedSegmentsViewController() {
+        
     }
     
+    func removeSegmentsViewController() {
+        
     }
 }
