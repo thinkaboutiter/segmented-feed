@@ -59,6 +59,18 @@ class RootViewController: BaseViewController, RootViewModelConsumer {
     // MARK: - Actions
     @IBAction func embeddingActionsButton_touchUpInside(_ sender: UIButton) {
         Logger.debug.message()
+        do {
+            if let _ = self.segmentsViewController {
+                try self.removeSegmentsViewController()
+            }
+            else {
+                try self.embedSegmentsViewController()
+            }
+        }
+        catch let error as NSError {
+            Logger.error.message().object(error)
+        }
+        self.configure_embeddingActionsButton(sender)
     }
 }
 
@@ -87,11 +99,47 @@ private extension RootViewController {
 // MARK: - Embedding
 private extension RootViewController {
     
-    func embedSegmentsViewController() {
-        
+    func embedSegmentsViewController() throws {
+        guard self.segmentsViewController?.parent == nil else {
+            let error: NSError = NSError(domain: ErrorConstants.errorDomainName,
+                                         code: ErrorConstants.ErrorCodeDescription.segmentsViewControllerParentNotNil.code,
+                                         userInfo: [
+                                            NSLocalizedDescriptionKey: ErrorConstants.ErrorCodeDescription.segmentsViewControllerParentNotNil.description
+            ])
+            throw error
+        }
+        self.segmentsViewController = nil
+        let vc: SegmentsViewController = self.segmentsViewControllerFactory.makeSegmentsViewController()
+        try self.embed(vc,
+                       containerView: self.segmentsContainerView)
+        self.segmentsViewController = vc
     }
     
-    func removeSegmentsViewController() {
+    func removeSegmentsViewController() throws {
+        guard self.segmentsViewController != nil else {
+            let error: NSError = NSError(domain: ErrorConstants.errorDomainName,
+                                         code: ErrorConstants.ErrorCodeDescription.segmentsViewControllerIsNil.code,
+                                         userInfo: [
+                                            NSLocalizedDescriptionKey: ErrorConstants.ErrorCodeDescription.segmentsViewControllerIsNil.description
+            ])
+            throw error
+        }
+        try self.remove(self.segmentsViewController!)
+        self.segmentsViewController = nil
+    }
+}
+
+// MARK: - Errors
+private extension RootViewController {
+    
+    enum ErrorConstants {
+        static let errorDomainName: String = "\(AppConstants.projectName).\(String(describing: RootViewController.self))"
         
+        enum ErrorCodeDescription {
+            static let segmentsViewControllerParentNotNil: (code: Int, description: String)
+                = (9001, "\(String(describing: SegmentsViewController.self)) instance has a parent view controller!")
+            static let segmentsViewControllerIsNil: (code: Int, description: String)
+                = (9002, "\(String(describing: SegmentsViewController.self)) instance is nil!")
+        }
     }
 }

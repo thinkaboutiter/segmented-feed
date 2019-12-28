@@ -9,6 +9,9 @@
 import Foundation
 
 enum AppConstants {
+    
+    static let projectName: String = "segmented-feed"
+    
     enum LocalizedStringComment {
         static let buttonTitle: String = "Button Title"
     }
