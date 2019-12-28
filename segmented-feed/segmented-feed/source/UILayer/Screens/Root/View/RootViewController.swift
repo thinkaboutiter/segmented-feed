@@ -18,6 +18,7 @@ class RootViewController: BaseViewController, RootViewModelConsumer {
     
     // MARK: - Properties
     private let viewModel: RootViewModel
+    private let segmentsViewControllerFactory: SegmentsViewControllerFactory
     @IBOutlet private weak var segmentsContainerView: UIView!
     @IBOutlet private weak var embeddingActionsButton: UIButton!
     private weak var segmentsViewController: SegmentsViewController?
@@ -33,8 +34,11 @@ class RootViewController: BaseViewController, RootViewModelConsumer {
         fatalError("Creating this view controller with `init(nibName:bundle:)` is unsupported in favor of dependency injection initializer.")
     }
     
-    init(viewModel: RootViewModel) {
+    init(viewModel: RootViewModel,
+         segmentsViewControllerFactory: SegmentsViewControllerFactory)
+    {
         self.viewModel = viewModel
+        self.segmentsViewControllerFactory = segmentsViewControllerFactory
         super.init(nibName: String(describing: RootViewController.self), bundle: nil)
         self.viewModel.setViewModelConsumer(self)
         Logger.success.message()
