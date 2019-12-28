@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Properties
     var window: UIWindow?
-    private let rootDependencyContainer = RootDependencyContainer()
+    private let rootDependencyContainer = RootDependencyContainerImpl()
 
     // MARK: - UIApplicationDelegate protocol
     func application(_ application: UIApplication,

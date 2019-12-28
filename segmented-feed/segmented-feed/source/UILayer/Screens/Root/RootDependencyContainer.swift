@@ -9,7 +9,9 @@
 import Foundation
 import SimpleLogger
 
-class RootDependencyContainer: RootViewControllerFactory {
+protocol RootDependencyContainer: AnyObject {}
+
+class RootDependencyContainerImpl: RootDependencyContainer, RootViewControllerFactory {
     
     // MARK: - Initialization
     init() {

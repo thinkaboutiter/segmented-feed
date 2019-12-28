@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RootViewController" customModule="segmented_feed" customModuleProvider="target">
             <connections>
+                <outlet property="embeddingActionsButton" destination="vdP-nO-YHS" id="Y3i-aJ-rkh"/>
                 <outlet property="segmentsContainerView" destination="HPn-5R-CNB" id="fOc-hh-4G4"/>
                 <outlet property="view" destination="uUd-KY-ArK" id="UHn-S6-lHA"/>
             </connections>
@@ -25,12 +26,21 @@
                         <constraint firstAttribute="width" secondItem="HPn-5R-CNB" secondAttribute="height" multiplier="15:8" id="sE8-v8-PRd"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdP-nO-YHS" userLabel="embedding-actions-button">
+                    <rect key="frame" x="184" y="824" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="embeddingActionsButton_touchUpInside:" destination="-1" eventType="touchUpInside" id="gfW-G5-twe"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="HPn-5R-CNB" firstAttribute="width" secondItem="uUd-KY-ArK" secondAttribute="width" multiplier="0.75" id="3sn-Wk-MGa"/>
                 <constraint firstItem="HPn-5R-CNB" firstAttribute="centerY" secondItem="uUd-KY-ArK" secondAttribute="centerY" id="Drc-Yl-S1Q"/>
                 <constraint firstItem="HPn-5R-CNB" firstAttribute="centerX" secondItem="uUd-KY-ArK" secondAttribute="centerX" id="UkS-kf-I3c"/>
+                <constraint firstItem="vdP-nO-YHS" firstAttribute="centerX" secondItem="uUd-KY-ArK" secondAttribute="centerX" id="tmY-d7-agd"/>
+                <constraint firstItem="I8P-3O-wU2" firstAttribute="bottom" secondItem="vdP-nO-YHS" secondAttribute="bottom" constant="8" id="w7r-tW-vTR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="I8P-3O-wU2"/>
             <point key="canvasLocation" x="-293" y="75"/>

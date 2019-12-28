@@ -19,6 +19,8 @@ class RootViewController: BaseViewController, RootViewModelConsumer {
     // MARK: - Properties
     private let viewModel: RootViewModel
     @IBOutlet private weak var segmentsContainerView: UIView!
+    @IBOutlet private weak var embeddingActionsButton: UIButton!
+    private weak var segmentsViewController: SegmentsViewController?
     
     // MARK: - Initialization
     @available(*, unavailable, message: "Creating this view controller with `init(coder:)` is unsupported in favor of initializer dependency injection.")
@@ -48,6 +50,11 @@ class RootViewController: BaseViewController, RootViewModelConsumer {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configure_ui()
+    }
+    
+    // MARK: - Actions
+    @IBAction func embeddingActionsButton_touchUpInside(_ sender: UIButton) {
+        
     }
 }
 
