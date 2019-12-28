@@ -14,32 +14,27 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <viewController id="U5P-5j-Iwm">
-            <view key="view" contentMode="scaleToFill" id="QSp-5I-QJu">
-                <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhP-pK-hFX">
-                        <rect key="frame" x="179" y="190" width="42" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                </subviews>
-                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                <constraints>
-                    <constraint firstItem="RhP-pK-hFX" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vTH-PA-nTZ" secondAttribute="top" constant="8" id="Tcg-8D-kDd"/>
-                    <constraint firstItem="RhP-pK-hFX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vTH-PA-nTZ" secondAttribute="leading" constant="8" id="Voh-MB-922"/>
-                    <constraint firstItem="RhP-pK-hFX" firstAttribute="centerY" secondItem="QSp-5I-QJu" secondAttribute="centerY" id="edG-XW-E8W"/>
-                    <constraint firstItem="RhP-pK-hFX" firstAttribute="centerX" secondItem="QSp-5I-QJu" secondAttribute="centerX" id="tGy-rv-vGw"/>
-                </constraints>
-                <viewLayoutGuide key="safeArea" id="vTH-PA-nTZ"/>
-            </view>
-            <nil key="simulatedTopBarMetrics"/>
-            <nil key="simulatedBottomBarMetrics"/>
+        <view contentMode="scaleToFill" id="QSp-5I-QJu">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhP-pK-hFX">
+                    <rect key="frame" x="179" y="190" width="42" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="RhP-pK-hFX" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vTH-PA-nTZ" secondAttribute="top" constant="8" id="Tcg-8D-kDd"/>
+                <constraint firstItem="RhP-pK-hFX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vTH-PA-nTZ" secondAttribute="leading" constant="8" id="Voh-MB-922"/>
+                <constraint firstItem="RhP-pK-hFX" firstAttribute="centerY" secondItem="QSp-5I-QJu" secondAttribute="centerY" id="edG-XW-E8W"/>
+                <constraint firstItem="RhP-pK-hFX" firstAttribute="centerX" secondItem="QSp-5I-QJu" secondAttribute="centerX" id="tGy-rv-vGw"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <size key="freeformSize" width="400" height="400"/>
-            <point key="canvasLocation" x="-579.71014492753625" y="-160.04464285714286"/>
-        </viewController>
+            <viewLayoutGuide key="safeArea" id="vTH-PA-nTZ"/>
+            <point key="canvasLocation" x="-575.36231884057975" y="146.31696428571428"/>
+        </view>
     </objects>
 </document>
