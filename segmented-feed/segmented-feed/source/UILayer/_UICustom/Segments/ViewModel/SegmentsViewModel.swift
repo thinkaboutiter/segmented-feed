@@ -16,6 +16,7 @@ protocol SegmentsViewModelConsumer: AnyObject {
 /// APIs for `ViewModel` to expose to `View`
 protocol SegmentsViewModel: AnyObject {
     func setViewModelConsumer(_ newValue: SegmentsViewModelConsumer)
+    var segments: [Segment] { get }
 }
 
 class SegmentsViewModelImpl: SegmentsViewModel, SegmentsModelConsumer {
@@ -38,6 +39,10 @@ class SegmentsViewModelImpl: SegmentsViewModel, SegmentsModelConsumer {
     // MARK: - SegmentsViewModel protocol
     func setViewModelConsumer(_ newValue: SegmentsViewModelConsumer) {
         self.viewModelConsumer = newValue
+    }
+    
+    var segments: [Segment] {
+        return self.model.segments
     }
     
     // MARK: - SegmentsModelConsumer protocol

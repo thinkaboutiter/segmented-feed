@@ -24,6 +24,7 @@
 		4F38040323B5834600A765A3 /* SegmentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F38040223B5834600A765A3 /* SegmentsViewController.xib */; };
 		4F38040523B7EE1D00A765A3 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38040423B7EE1D00A765A3 /* AppConstants.swift */; };
 		4F38041123B7FD4500A765A3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F38040F23B7FD4500A765A3 /* Localizable.strings */; };
+		4F38042123B8C27C00A765A3 /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38042023B8C27C00A765A3 /* Segment.swift */; };
 		4F5EAFC423B390310024D33E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5EAFC323B390310024D33E /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		4F38040423B7EE1D00A765A3 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		4F38041023B7FD4500A765A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4F38041F23B7FFC800A765A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4F38042023B8C27C00A765A3 /* Segment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
 		4F5EAFB723B3902C0024D33E /* segmented-feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "segmented-feed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5EAFC323B390310024D33E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -231,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				4F3803FA23B5816D00A765A3 /* SegmentsModel.swift */,
+				4F38042023B8C27C00A765A3 /* Segment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F364AFD23B39A9A00865533 /* AppDelegate.swift in Sources */,
+				4F38042123B8C27C00A765A3 /* Segment.swift in Sources */,
 				4F364AFF23B39BCC00865533 /* BaseViewController.swift in Sources */,
 				4F364B0523B3B03600865533 /* RootViewModel.swift in Sources */,
 				4F3803FD23B581CF00A765A3 /* SegmentsViewModel.swift in Sources */,

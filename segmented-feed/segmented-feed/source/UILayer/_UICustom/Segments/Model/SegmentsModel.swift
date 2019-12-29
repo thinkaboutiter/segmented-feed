@@ -17,6 +17,7 @@ protocol SegmentsModelConsumer: AnyObject {
 /// APIs for `Model` to expose to `ViewModel`
 protocol SegmentsModel: AnyObject {
     func setModelConsumer(_ newValue: SegmentsModelConsumer)
+    var segments: [Segment] { get }
 }
 
 class SegmentsModelImpl: SegmentsModel {
@@ -36,5 +37,16 @@ class SegmentsModelImpl: SegmentsModel {
     // MARK: - SegmentsModel protocol
     func setModelConsumer(_ newValue: SegmentsModelConsumer) {
         self.modelConsumer = newValue
+    }
+    
+    var segments: [Segment] {
+        let result: [Segment] = [
+            Segment(title: "Cars", color: .red),
+            Segment(title: "Bannanas", color: .green),
+            Segment(title: "Dogs", color: .blue),
+            Segment(title: "Chocolates", color: .purple),
+            Segment(title: "Cats", color: .orange),
+        ]
+        return result
     }
 }
