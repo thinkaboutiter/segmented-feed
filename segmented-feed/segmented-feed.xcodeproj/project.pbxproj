@@ -25,6 +25,7 @@
 		4F38040523B7EE1D00A765A3 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38040423B7EE1D00A765A3 /* AppConstants.swift */; };
 		4F38041123B7FD4500A765A3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F38040F23B7FD4500A765A3 /* Localizable.strings */; };
 		4F38042123B8C27C00A765A3 /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38042023B8C27C00A765A3 /* Segment.swift */; };
+		4F38042423B8C43C00A765A3 /* BaseCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38042323B8C43C00A765A3 /* BaseCollectionView.swift */; };
 		4F5EAFC423B390310024D33E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5EAFC323B390310024D33E /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		4F38041023B7FD4500A765A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4F38041F23B7FFC800A765A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F38042023B8C27C00A765A3 /* Segment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
+		4F38042323B8C43C00A765A3 /* BaseCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionView.swift; sourceTree = "<group>"; };
 		4F5EAFB723B3902C0024D33E /* segmented-feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "segmented-feed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5EAFC323B390310024D33E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				4F364AFE23B39BCC00865533 /* BaseViewController.swift */,
+				4F38042323B8C43C00A765A3 /* BaseCollectionView.swift */,
 			);
 			path = _UIBaseClasses;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 		4F3803F823B57FE600A765A3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4F38042223B8C40B00A765A3 /* _customUI */,
 				4F3803FE23B5822B00A765A3 /* SegmentsViewController.swift */,
 				4F38040223B5834600A765A3 /* SegmentsViewController.xib */,
 			);
@@ -253,6 +257,13 @@
 				4F3803FC23B581CF00A765A3 /* SegmentsViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4F38042223B8C40B00A765A3 /* _customUI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = _customUI;
 			sourceTree = "<group>";
 		};
 		4F5EAFAE23B3902C0024D33E = {
@@ -389,6 +400,7 @@
 				4F3803FD23B581CF00A765A3 /* SegmentsViewModel.swift in Sources */,
 				4F3803FF23B5822B00A765A3 /* SegmentsViewController.swift in Sources */,
 				4F3803F323B5627600A765A3 /* UIViewController+Extensions.swift in Sources */,
+				4F38042423B8C43C00A765A3 /* BaseCollectionView.swift in Sources */,
 				4F364B0823B3B07700865533 /* RootModel.swift in Sources */,
 				4F38040523B7EE1D00A765A3 /* AppConstants.swift in Sources */,
 				4F38040123B5828300A765A3 /* SegmentsDependencyContainer.swift in Sources */,
