@@ -49,6 +49,13 @@ class SegmentsViewController: BaseViewController, SegmentsViewModelConsumer {
         super.viewDidLoad()
         self.configure_ui()
     }
+    
+    // MARK: - Rotation
+    override func viewWillTransition(to size: CGSize,
+                                     with coordinator: UIViewControllerTransitionCoordinator)
+    {
+        self.segmentsCollectionView.reloadData()
+    }
 }
 
 // MARK: - Configurations
