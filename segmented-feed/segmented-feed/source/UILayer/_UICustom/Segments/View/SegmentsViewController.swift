@@ -60,7 +60,7 @@ private extension SegmentsViewController {
     }
     
     func configue_view(_ view: UIView) {
-        view.backgroundColor = .orange
+        view.backgroundColor = UIColor.white.withAlphaComponent(0.5)
     }
     
     func configure_segmentsCollectionView(_ collectionView: UICollectionView) {
@@ -70,7 +70,8 @@ private extension SegmentsViewController {
             .register(UINib(nibName: String(describing: SegmentCollectionViewCell.self),
                             bundle: nil),
                       forCellWithReuseIdentifier: String(describing: SegmentCollectionViewCell.self))
-        collectionView.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        collectionView.backgroundColor = .clear
+        collectionView.showsHorizontalScrollIndicator = false
     }
 }
 
@@ -128,5 +129,76 @@ extension SegmentsViewController: UICollectionViewDelegate {
             return
         }
         Logger.debug.message().object(segment.title)
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout protocol
+extension SegmentsViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        return self.itemSize(for: collectionView)
+    }
+    
+    private func itemSize(for collectionView: UICollectionView) -> CGSize {
+        guard let dimensionsProvider: CollectionViewDimensionsProvider
+            = collectionView as? CollectionViewDimensionsProvider
+        else {
+            let message: String = "Unable to obtain valid \(String(describing: CollectionViewDimensionsProvider.self)) object!"
+            Logger.error.message(message)
+            return CGSize.zero
+        }
+        let item_width: CGFloat = collectionView.bounds.width * 0.4
+        let item_height: CGFloat = (
+            collectionView.bounds.height
+                - dimensionsProvider.sectionEdgeInsets.top
+                - dimensionsProvider.sectionEdgeInsets.bottom
+        )
+        let result: CGSize = CGSize(width: item_width, height: item_height)
+        return result
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets
+    {
+        guard let dimensionsProvider: CollectionViewDimensionsProvider
+            = collectionView as? CollectionViewDimensionsProvider
+        else {
+            let message: String = "Unable to obtain valid \(String(describing: CollectionViewDimensionsProvider.self)) object!"
+            Logger.error.message(message)
+            return UIEdgeInsets.zero
+        }
+        return dimensionsProvider.sectionEdgeInsets
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat
+    {
+        guard let dimensionsProvider: CollectionViewDimensionsProvider
+            = collectionView as? CollectionViewDimensionsProvider
+        else {
+            let message: String = "Unable to obtain valid \(String(describing: CollectionViewDimensionsProvider.self)) object!"
+            Logger.error.message(message)
+            return 0
+        }
+        return dimensionsProvider.minimumInteritemSpacing
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat
+    {
+        guard let dimensionsProvider: CollectionViewDimensionsProvider
+            = collectionView as? CollectionViewDimensionsProvider
+        else {
+            let message: String = "Unable to obtain valid \(String(describing: CollectionViewDimensionsProvider.self)) object!"
+            Logger.error.message(message)
+            return 0
+        }
+        return dimensionsProvider.minimumLineSpacing
     }
 }
