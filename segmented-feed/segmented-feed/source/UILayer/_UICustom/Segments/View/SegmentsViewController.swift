@@ -115,20 +115,13 @@ extension SegmentsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath)
     {
-        guard let cell: SegmentCollectionViewCell = collectionView
-            .cellForItem(at: indexPath) as? SegmentCollectionViewCell
-        else {
-            let message: String = "Unable to obtain \(String(describing: SegmentCollectionViewCell.self)) object for index_path=\(indexPath)!"
-            Logger.error.message(message)
-            return
+        do {
+            let segment: Segment = try self.viewModel.segment(for: indexPath)
+            Logger.debug.message().object(segment.title)
         }
-        guard let segment: Segment = cell.segment
-        else {
-            let message: String = "Unable to obtain \(String(describing: Segment.self)) value from \(String(describing: cell.self))"
-            Logger.error.message(message)
-            return
+        catch let error as NSError {
+            Logger.error.message().object(error)
         }
-        Logger.debug.message().object(segment.title)
     }
 }
 
@@ -139,25 +132,42 @@ extension SegmentsViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        return self.itemSize(for: collectionView)
+        let result: CGSize = self.itemSize(for: collectionView,
+                                           at: indexPath)
+        return result
     }
     
-    private func itemSize(for collectionView: UICollectionView) -> CGSize {
-        guard let dimensionsProvider: CollectionViewDimensionsProvider
-            = collectionView as? CollectionViewDimensionsProvider
+    private func itemSize(for collectionView: UICollectionView,
+                          at indexPath: IndexPath) -> CGSize
+    {
+        guard let dimensionsProvider: SegmentsCollectionViewDimentionProvider
+            = collectionView as? SegmentsCollectionViewDimentionProvider
         else {
-            let message: String = "Unable to obtain valid \(String(describing: CollectionViewDimensionsProvider.self)) object!"
+            let message: String = "Unable to obtain valid \(String(describing: SegmentsCollectionViewDimentionProvider.self)) object!"
             Logger.error.message(message)
             return CGSize.zero
         }
-        let item_width: CGFloat = collectionView.bounds.width * 0.4
-        let item_height: CGFloat = (
-            collectionView.bounds.height
-                - dimensionsProvider.sectionEdgeInsets.top
-                - dimensionsProvider.sectionEdgeInsets.bottom
-        )
-        let result: CGSize = CGSize(width: item_width, height: item_height)
-        return result
+        do {
+            let container_height: CGFloat = collectionView.bounds.height
+            let segment: Segment = try self.viewModel.segment(for: indexPath)
+            let text_width: CGFloat = segment.title.width(withConstrainedHeight: container_height,
+                                                          font: SegmentCollectionViewCell.UIConstatns.titleFont)
+            let item_width: CGFloat = (
+                text_width
+                    + dimensionsProvider.textHorizontallPadding * 2
+            )
+            let item_height: CGFloat = (
+                container_height
+                    - dimensionsProvider.sectionEdgeInsets.top
+                    - dimensionsProvider.sectionEdgeInsets.bottom
+            )
+            let result: CGSize = CGSize(width: item_width, height: item_height)
+            return result
+        }
+        catch let error as NSError {
+            Logger.error.message().object(error)
+            return CGSize.zero
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView,
