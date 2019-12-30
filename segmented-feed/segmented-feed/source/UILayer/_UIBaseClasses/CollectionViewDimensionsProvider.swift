@@ -9,10 +9,7 @@
 import UIKit
 
 protocol CollectionViewDimensionsProvider {
-    var leadingOffset: CGFloat { get }
-    var trailingOffset: CGFloat { get }
     var minimumInteritemSpacing: CGFloat { get }
     var minimumLineSpacing: CGFloat { get }
-    var itemWidthToHeightRatio: CGFloat { get }
     var sectionEdgeInsets: UIEdgeInsets { get }
 }
