@@ -13,9 +13,11 @@ class SegmentCollectionViewCell: BaseCollectionViewCell {
     // MARK: - Properties
     @IBOutlet private weak var contentContrainerView: UIView!
     @IBOutlet private weak var titleLabel: UILabel!
+    private(set) var segment: Segment?
     
     // MARK: - UI configurations
     func configure(with segment: Segment) {
+        self.segment = segment
         self.titleLabel.text = segment.title
         self.contentContrainerView.backgroundColor = segment.color
     }

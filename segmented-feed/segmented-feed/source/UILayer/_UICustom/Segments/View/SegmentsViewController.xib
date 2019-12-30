@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SegmentsViewController" customModule="segmented_feed" customModuleProvider="target">
             <connections>
-                <outlet property="demoLabel" destination="RhP-pK-hFX" id="SeK-3o-btC"/>
+                <outlet property="segmentsCollectionView" destination="d8c-PI-Bf3" id="yhJ-Uv-04O"/>
                 <outlet property="view" destination="QSp-5I-QJu" id="x0k-lr-1rp"/>
             </connections>
         </placeholder>
@@ -18,19 +18,23 @@
             <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhP-pK-hFX">
-                    <rect key="frame" x="179" y="190" width="42" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="d8c-PI-Bf3" customClass="SegmentsCollectionView" customModule="segmented_feed" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="400" height="356"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YRU-pc-GE2">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="RhP-pK-hFX" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vTH-PA-nTZ" secondAttribute="top" constant="8" id="Tcg-8D-kDd"/>
-                <constraint firstItem="RhP-pK-hFX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vTH-PA-nTZ" secondAttribute="leading" constant="8" id="Voh-MB-922"/>
-                <constraint firstItem="RhP-pK-hFX" firstAttribute="centerY" secondItem="QSp-5I-QJu" secondAttribute="centerY" id="edG-XW-E8W"/>
-                <constraint firstItem="RhP-pK-hFX" firstAttribute="centerX" secondItem="QSp-5I-QJu" secondAttribute="centerX" id="tGy-rv-vGw"/>
+                <constraint firstItem="vTH-PA-nTZ" firstAttribute="trailing" secondItem="d8c-PI-Bf3" secondAttribute="trailing" id="Efb-HZ-hA9"/>
+                <constraint firstItem="d8c-PI-Bf3" firstAttribute="top" secondItem="vTH-PA-nTZ" secondAttribute="top" id="Wjf-hy-c50"/>
+                <constraint firstItem="vTH-PA-nTZ" firstAttribute="bottom" secondItem="d8c-PI-Bf3" secondAttribute="bottom" id="iVS-lK-zdy"/>
+                <constraint firstItem="d8c-PI-Bf3" firstAttribute="leading" secondItem="vTH-PA-nTZ" secondAttribute="leading" id="zjq-tE-rPh"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vTH-PA-nTZ"/>

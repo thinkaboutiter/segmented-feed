@@ -18,7 +18,7 @@ class SegmentsViewController: BaseViewController, SegmentsViewModelConsumer {
     
     // MARK: - Properties
     private let viewModel: SegmentsViewModel
-    @IBOutlet private weak var demoLabel: UILabel!
+    @IBOutlet private weak var segmentsCollectionView: SegmentsCollectionView!
     
     // MARK: - Initialization
     @available(*, unavailable, message: "Creating this view controller with `init(coder:)` is unsupported in favor of initializer dependency injection.")
@@ -56,14 +56,77 @@ private extension SegmentsViewController {
     
     func configure_ui() {
         self.configue_view(self.view)
-        self.configure_demoLabel(self.demoLabel)
+        self.configure_segmentsCollectionView(self.segmentsCollectionView)
     }
     
     func configue_view(_ view: UIView) {
         view.backgroundColor = .orange
     }
     
-    func configure_demoLabel(_ label: UILabel) {
-        label.text = String(describing: SegmentsViewController.self)
+    func configure_segmentsCollectionView(_ collectionView: UICollectionView) {
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView
+            .register(UINib(nibName: String(describing: SegmentCollectionViewCell.self),
+                            bundle: nil),
+                      forCellWithReuseIdentifier: String(describing: SegmentCollectionViewCell.self))
+        collectionView.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+    }
+}
+
+// MARK: - UICollectionViewDataSource protocol
+extension SegmentsViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int
+    {
+        let result: Int = self.viewModel.segments.count
+        return result
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
+        guard let cell: SegmentCollectionViewCell = collectionView
+            .dequeueReusableCell(withReuseIdentifier: String(describing: SegmentCollectionViewCell.self),
+                                 for: indexPath) as? SegmentCollectionViewCell
+        else {
+            let message: String = "Unable to dequeue valid \(String(describing: SegmentCollectionViewCell.self))!"
+            Logger.error.message(message)
+            return UICollectionViewCell()
+        }
+        
+        do {
+            let segment: Segment = try self.viewModel.segment(for: indexPath)
+            cell.configure(with: segment)
+            return cell
+        }
+        catch let error as NSError {
+            Logger.error.message().object(error)
+            return UICollectionViewCell()
+        }
+    }
+}
+
+// MARK: - UICollectionViewDelegate protocol
+extension SegmentsViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath)
+    {
+        guard let cell: SegmentCollectionViewCell = collectionView
+            .cellForItem(at: indexPath) as? SegmentCollectionViewCell
+        else {
+            let message: String = "Unable to obtain \(String(describing: SegmentCollectionViewCell.self)) object for index_path=\(indexPath)!"
+            Logger.error.message(message)
+            return
+        }
+        guard let segment: Segment = cell.segment
+        else {
+            let message: String = "Unable to obtain \(String(describing: Segment.self)) value from \(String(describing: cell.self))"
+            Logger.error.message(message)
+            return
+        }
+        Logger.debug.message().object(segment.title)
     }
 }

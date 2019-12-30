@@ -17,6 +17,7 @@ protocol SegmentsViewModelConsumer: AnyObject {
 protocol SegmentsViewModel: AnyObject {
     func setViewModelConsumer(_ newValue: SegmentsViewModelConsumer)
     var segments: [Segment] { get }
+    func segment(for indexPath: IndexPath) throws -> Segment
 }
 
 class SegmentsViewModelImpl: SegmentsViewModel, SegmentsModelConsumer {
@@ -45,5 +46,34 @@ class SegmentsViewModelImpl: SegmentsViewModel, SegmentsModelConsumer {
         return self.model.segments
     }
     
+    func segment(for indexPath: IndexPath) throws -> Segment {
+        let index: Int = indexPath.row
+        let segments: [Segment] = self.segments
+        let range: Range<Int> = 0..<segments.count
+        guard range ~= index
+        else {
+            let error: NSError = NSError(domain: ErrorConstants.errorDomainName,
+                                         code: ErrorConstants.ErrorCode.indexOutOfBounds,
+                                         userInfo: [
+                                            NSLocalizedDescriptionKey: "index=\(index) out of range=\(range)!"
+            ])
+            throw error
+        }
+        let result: Segment = segments[index]
+        return result
+    }
+    
     // MARK: - SegmentsModelConsumer protocol
+}
+
+// MARK: - Errors
+private extension SegmentsViewModelImpl {
+    
+    enum ErrorConstants {
+        static let errorDomainName: String = "\(AppConstants.projectName).\(String(describing: SegmentsViewModelImpl.self))"
+        
+        enum ErrorCode {
+            static let indexOutOfBounds: Int = 9001
+        }
+    }
 }
