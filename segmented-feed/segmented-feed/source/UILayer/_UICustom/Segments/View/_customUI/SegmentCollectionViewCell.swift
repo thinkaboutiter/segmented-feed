@@ -19,6 +19,18 @@ class SegmentCollectionViewCell: BaseCollectionViewCell {
     func configure(with segment: Segment) {
         self.segment = segment
         self.titleLabel.text = segment.title
+        self.titleLabel.font = UIConstatns.titleFont
         self.contentContrainerView.backgroundColor = segment.color
+    }
+}
+
+// MARK: - UI constants
+extension SegmentCollectionViewCell {
+    
+    enum UIConstatns {
+        private static let fontSize: CGFloat = 16
+        private static let fontWeight: UIFont.Weight = .medium
+        static let titleFont: UIFont = UIFont.systemFont(ofSize: UIConstatns.fontSize,
+                                                         weight: UIConstatns.fontWeight)
     }
 }
