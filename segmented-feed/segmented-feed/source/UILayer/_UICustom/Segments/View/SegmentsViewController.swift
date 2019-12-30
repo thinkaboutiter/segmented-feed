@@ -54,7 +54,7 @@ class SegmentsViewController: BaseViewController, SegmentsViewModelConsumer {
     override func viewWillTransition(to size: CGSize,
                                      with coordinator: UIViewControllerTransitionCoordinator)
     {
-        self.segmentsCollectionView.reloadData()
+        self.segmentsCollectionView.collectionViewLayout.invalidateLayout()
     }
 }
 
