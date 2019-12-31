@@ -69,15 +69,18 @@ class SegmentsViewController: BaseViewController, SegmentsViewModelConsumer {
         super.viewWillTransition(to: size,
                                  with: coordinator)
         self.segmentsCollectionView.collectionViewLayout.invalidateLayout()
-        coordinator.animate(alongsideTransition: { (_) in
-            let indexPath: IndexPath = self.viewModel.selectedIndexPath
-            self.segmentsCollectionView.scrollToItem(at: indexPath,
-                                                     at: [
-                                                        .centeredHorizontally,
-                                                        .centeredVertically
-                ],
-                                                     animated: true)
-        }, completion: nil)
+        coordinator
+            .animate(
+                alongsideTransition: { (_) in
+                    let indexPath: IndexPath = self.viewModel.selectedIndexPath
+                    self.segmentsCollectionView.scrollToItem(at: indexPath,
+                                                             at: [
+                                                                .centeredHorizontally,
+                                                                .centeredVertically
+                        ],
+                                                             animated: true)
+            },
+                completion: nil)
     }
 }
 
