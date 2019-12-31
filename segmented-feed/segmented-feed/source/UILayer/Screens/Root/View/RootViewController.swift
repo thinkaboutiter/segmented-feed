@@ -109,9 +109,13 @@ private extension RootViewController {
             throw error
         }
         self.segmentsViewController = nil
-        let vc: SegmentsViewController = self.segmentsViewControllerFactory.makeSegmentsViewController()
+        let vc: SegmentsViewController = self.segmentsViewControllerFactory.makeSegmentsViewController(withSegmentSelectionConsumer: self)
         try self.embed(vc,
                        containerView: self.segmentsContainerView)
+        
+        let segment: Segment = try vc.selectedSegment()
+        self.didSelectSegment(segment)
+        
         self.segmentsViewController = vc
     }
     
@@ -126,6 +130,14 @@ private extension RootViewController {
         }
         try self.remove(self.segmentsViewController!)
         self.segmentsViewController = nil
+    }
+}
+
+// MARK: - SegmentSelectionConsumer protocol
+extension RootViewController: SegmentSelectionConsumer {
+    
+    func didSelectSegment(_ segment: Segment) {
+        Logger.debug.message().object(segment)
     }
 }
 

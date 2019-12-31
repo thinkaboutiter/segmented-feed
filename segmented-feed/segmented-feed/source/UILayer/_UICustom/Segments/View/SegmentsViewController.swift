@@ -11,7 +11,11 @@ import SimpleLogger
 
 /// APIs for `DependecyContainer` to expose.
 protocol SegmentsViewControllerFactory {
-    func makeSegmentsViewController() -> SegmentsViewController
+    func makeSegmentsViewController(withSegmentSelectionConsumer consumer: SegmentSelectionConsumer) -> SegmentsViewController
+}
+
+protocol SegmentSelectionConsumer: AnyObject {
+    func didSelectSegment(_ segment: Segment)
 }
 
 class SegmentsViewController: BaseViewController, SegmentsViewModelConsumer {
@@ -19,6 +23,11 @@ class SegmentsViewController: BaseViewController, SegmentsViewModelConsumer {
     // MARK: - Properties
     private let viewModel: SegmentsViewModel
     @IBOutlet private weak var segmentsCollectionView: SegmentsCollectionView!
+    private weak var segmentsSelectionConsumer: SegmentSelectionConsumer!
+    func selectedSegment() throws -> Segment {
+        let result: Segment = try self.viewModel.selectedSegment()
+        return result
+    }
     
     // MARK: - Initialization
     @available(*, unavailable, message: "Creating this view controller with `init(coder:)` is unsupported in favor of initializer dependency injection.")
@@ -31,8 +40,11 @@ class SegmentsViewController: BaseViewController, SegmentsViewModelConsumer {
         fatalError("Creating this view controller with `init(nibName:bundle:)` is unsupported in favor of dependency injection initializer.")
     }
     
-    init(viewModel: SegmentsViewModel) {
+    init(viewModel: SegmentsViewModel,
+         segmentsSelectionConsumer: SegmentSelectionConsumer)
+    {
         self.viewModel = viewModel
+        self.segmentsSelectionConsumer = segmentsSelectionConsumer
         super.init(nibName: String(describing: SegmentsViewController.self), bundle: nil)
         self.viewModel.setViewModelConsumer(self)
         Logger.success.message()
@@ -133,6 +145,13 @@ extension SegmentsViewController: UICollectionViewDelegate {
                                         .centeredVertically
             ],
                                     animated: true)
+        do {
+            let segment: Segment = try self.viewModel.selectedSegment()
+            self.segmentsSelectionConsumer.didSelectSegment(segment)
+        }
+        catch let error as NSError {
+            Logger.error.message().object(error)
+        }
     }
 }
 

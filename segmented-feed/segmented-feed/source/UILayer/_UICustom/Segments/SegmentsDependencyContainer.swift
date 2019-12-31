@@ -26,9 +26,10 @@ class SegmentsDependencyContainer: SegmentsViewControllerFactory {
     }
     
     // MARK: - SegmentsViewControllerFactory protocol
-    func makeSegmentsViewController() -> SegmentsViewController {
+    func makeSegmentsViewController(withSegmentSelectionConsumer consumer: SegmentSelectionConsumer) -> SegmentsViewController {
         let vm: SegmentsViewModel = self.makeSegmentsViewModel()
-        let vc: SegmentsViewController = SegmentsViewController(viewModel: vm)
+        let vc: SegmentsViewController = SegmentsViewController(viewModel: vm,
+                                                                segmentsSelectionConsumer: consumer)
         return vc
     }
     
