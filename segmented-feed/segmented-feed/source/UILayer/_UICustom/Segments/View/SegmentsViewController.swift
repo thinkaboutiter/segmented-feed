@@ -127,6 +127,12 @@ extension SegmentsViewController: UICollectionViewDelegate {
                         didSelectItemAt indexPath: IndexPath)
     {
         self.viewModel.setSelectedIndexPath(indexPath)
+        collectionView.scrollToItem(at: indexPath,
+                                    at: [
+                                        .centeredHorizontally,
+                                        .centeredVertically
+            ],
+                                    animated: true)
     }
 }
 
