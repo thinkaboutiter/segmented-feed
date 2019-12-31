@@ -40,13 +40,7 @@ class SegmentsModelImpl: SegmentsModel {
     }
     
     var segments: [Segment] {
-        let result: [Segment] = [
-            Segment(title: "Cars", color: .red),
-            Segment(title: "Bannanas", color: .green),
-            Segment(title: "Dogs", color: .blue),
-            Segment(title: "Chocolates", color: .purple),
-            Segment(title: "Cats", color: .orange),
-        ]
+        let result: [Segment] = Segment.allCases
         return result
     }
 }
