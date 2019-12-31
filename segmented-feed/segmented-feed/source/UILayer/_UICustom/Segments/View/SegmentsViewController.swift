@@ -24,6 +24,10 @@ class SegmentsViewController: BaseViewController, SegmentsViewModelConsumer {
     private let viewModel: SegmentsViewModel
     @IBOutlet private weak var segmentsCollectionView: SegmentsCollectionView!
     private weak var segmentsSelectionConsumer: SegmentSelectionConsumer!
+    func selectedSegment() throws -> Segment {
+        let result: Segment = try self.viewModel.selectedSegment()
+        return result
+    }
     
     // MARK: - Initialization
     @available(*, unavailable, message: "Creating this view controller with `init(coder:)` is unsupported in favor of initializer dependency injection.")

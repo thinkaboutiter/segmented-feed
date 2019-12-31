@@ -112,6 +112,10 @@ private extension RootViewController {
         let vc: SegmentsViewController = self.segmentsViewControllerFactory.makeSegmentsViewController(withSegmentSelectionConsumer: self)
         try self.embed(vc,
                        containerView: self.segmentsContainerView)
+        
+        let segment: Segment = try vc.selectedSegment()
+        self.didSelectSegment(segment)
+        
         self.segmentsViewController = vc
     }
     
