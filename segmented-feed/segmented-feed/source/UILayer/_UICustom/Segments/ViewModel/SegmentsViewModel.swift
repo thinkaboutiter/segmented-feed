@@ -18,6 +18,9 @@ protocol SegmentsViewModel: AnyObject {
     func setViewModelConsumer(_ newValue: SegmentsViewModelConsumer)
     var segments: [Segment] { get }
     func segment(for indexPath: IndexPath) throws -> Segment
+    var selectedIndexPath: IndexPath { get }
+    func setSelectedIndexPath(_ newValue: IndexPath)
+    func selectedSegment() throws -> Segment
 }
 
 class SegmentsViewModelImpl: SegmentsViewModel, SegmentsModelConsumer {
@@ -63,7 +66,27 @@ class SegmentsViewModelImpl: SegmentsViewModel, SegmentsModelConsumer {
         return result
     }
     
-    // MARK: - SegmentsModelConsumer protocol
+    private(set) var selectedIndexPath: IndexPath = IndexPath(item: 0, section: 0)
+    
+    func setSelectedIndexPath(_ newValue: IndexPath) {
+        self.selectedIndexPath = newValue
+        do {
+            try self.setSelectedSegment(for: newValue)
+        }
+        catch let error as NSError {
+            Logger.error.message().object(error)
+        }
+    }
+    
+    private func setSelectedSegment(for indexPath: IndexPath) throws {
+        let segment: Segment = try self.segment(for: indexPath)
+        self.model.setSelectedSegment(segment)
+    }
+    
+    func selectedSegment() throws -> Segment {
+        let result: Segment = try self.segment(for: self.selectedIndexPath)
+        return result
+    }
 }
 
 // MARK: - Errors

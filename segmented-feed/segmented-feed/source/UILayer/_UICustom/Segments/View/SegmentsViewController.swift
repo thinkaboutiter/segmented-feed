@@ -79,6 +79,10 @@ private extension SegmentsViewController {
                       forCellWithReuseIdentifier: String(describing: SegmentCollectionViewCell.self))
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.reloadData()
+        collectionView.selectItem(at: self.viewModel.selectedIndexPath,
+                                  animated: false,
+                                  scrollPosition: [])
     }
 }
 
@@ -122,13 +126,7 @@ extension SegmentsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath)
     {
-        do {
-            let segment: Segment = try self.viewModel.segment(for: indexPath)
-            Logger.debug.message().object(segment.title)
-        }
-        catch let error as NSError {
-            Logger.error.message().object(error)
-        }
+        self.viewModel.setSelectedIndexPath(indexPath)
     }
 }
 

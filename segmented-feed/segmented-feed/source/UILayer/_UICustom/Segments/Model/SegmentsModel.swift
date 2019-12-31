@@ -18,6 +18,8 @@ protocol SegmentsModelConsumer: AnyObject {
 protocol SegmentsModel: AnyObject {
     func setModelConsumer(_ newValue: SegmentsModelConsumer)
     var segments: [Segment] { get }
+    var selectedSegment: Segment { get }
+    func setSelectedSegment(_ newValue: Segment)
 }
 
 class SegmentsModelImpl: SegmentsModel {
@@ -42,5 +44,11 @@ class SegmentsModelImpl: SegmentsModel {
     var segments: [Segment] {
         let result: [Segment] = Segment.allCases
         return result
+    }
+    
+    private(set) var selectedSegment: Segment = Segment.allCases.first!
+    func setSelectedSegment(_ newValue: Segment) {
+        self.selectedSegment = newValue
+        Logger.cache.message().object(newValue)
     }
 }

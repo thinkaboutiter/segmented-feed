@@ -13,7 +13,20 @@ class SegmentCollectionViewCell: BaseCollectionViewCell {
     // MARK: - Properties
     @IBOutlet private weak var contentContrainerView: UIView!
     @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var selectionView: UIView!
     private(set) var segment: Segment?
+    
+    // MARK: - Life cycle
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.configure_selectionView(self.selectionView)
+    }
+    
+    override var isSelected: Bool {
+        didSet {
+            self.selectionView.isHidden = !self.isSelected
+        }
+    }
     
     // MARK: - UI configurations
     func configure(with segment: Segment) {
@@ -21,6 +34,15 @@ class SegmentCollectionViewCell: BaseCollectionViewCell {
         self.titleLabel.text = segment.title
         self.titleLabel.font = UIConstatns.titleFont
         self.contentContrainerView.backgroundColor = segment.color
+    }
+}
+
+// MARK: - UI configurations
+private extension SegmentCollectionViewCell {
+    
+    func configure_selectionView(_ view: UIView) {
+        view.backgroundColor = .white
+        view.isHidden = true
     }
 }
 
