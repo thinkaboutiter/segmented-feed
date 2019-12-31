@@ -18,6 +18,10 @@ class RootViewController: BaseViewController, RootViewModelConsumer {
     
     // MARK: - Properties
     private let viewModel: RootViewModel
+    private let segmentsViewControllerFactory: SegmentsViewControllerFactory
+    @IBOutlet private weak var segmentsContainerView: UIView!
+    @IBOutlet private weak var embeddingActionsButton: UIButton!
+    private weak var segmentsViewController: SegmentsViewController?
     
     // MARK: - Initialization
     @available(*, unavailable, message: "Creating this view controller with `init(coder:)` is unsupported in favor of initializer dependency injection.")
@@ -30,8 +34,11 @@ class RootViewController: BaseViewController, RootViewModelConsumer {
         fatalError("Creating this view controller with `init(nibName:bundle:)` is unsupported in favor of dependency injection initializer.")
     }
     
-    init(viewModel: RootViewModel) {
+    init(viewModel: RootViewModel,
+         segmentsViewControllerFactory: SegmentsViewControllerFactory)
+    {
         self.viewModel = viewModel
+        self.segmentsViewControllerFactory = segmentsViewControllerFactory
         super.init(nibName: String(describing: RootViewController.self), bundle: nil)
         self.viewModel.setViewModelConsumer(self)
         Logger.success.message()
@@ -46,7 +53,93 @@ class RootViewController: BaseViewController, RootViewModelConsumer {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.configure_ui()
+    }
+    
+    // MARK: - Actions
+    @IBAction func embeddingActionsButton_touchUpInside(_ sender: UIButton) {
+        Logger.debug.message()
+        do {
+            if let _ = self.segmentsViewController {
+                try self.removeSegmentsViewController()
+            }
+            else {
+                try self.embedSegmentsViewController()
+            }
+        }
+        catch let error as NSError {
+            Logger.error.message().object(error)
+        }
+        self.configure_embeddingActionsButton(sender)
+    }
+}
+
+// MARK: - UI configurations
+private extension RootViewController {
+    
+    func configure_ui() {
+        self.configure_segmentsContainerView(self.segmentsContainerView)
+        self.configure_embeddingActionsButton(self.embeddingActionsButton)
+    }
+    
+    func configure_segmentsContainerView(_ view: UIView) {
+        view.backgroundColor = UIColor.darkGray
+    }
+    
+    func configure_embeddingActionsButton(_ button: UIButton) {
+        let embedTitle: String = NSLocalizedString("embeddingActionsButton.title.embed",
+                                                   comment: AppConstants.LocalizedStringComment.buttonTitle)
+        let removeTitle: String = NSLocalizedString("embeddingActionsButton.title.remove",
+                                                    comment: AppConstants.LocalizedStringComment.buttonTitle)
+        let title: String = self.segmentsViewController == nil ? embedTitle : removeTitle
+        button.setTitle(title, for: .normal)
+    }
+}
+
+// MARK: - Embedding
+private extension RootViewController {
+    
+    func embedSegmentsViewController() throws {
+        guard self.segmentsViewController?.parent == nil else {
+            let error: NSError = NSError(domain: ErrorConstants.errorDomainName,
+                                         code: ErrorConstants.ErrorCodeDescription.segmentsViewControllerParentNotNil.code,
+                                         userInfo: [
+                                            NSLocalizedDescriptionKey: ErrorConstants.ErrorCodeDescription.segmentsViewControllerParentNotNil.description
+            ])
+            throw error
+        }
+        self.segmentsViewController = nil
+        let vc: SegmentsViewController = self.segmentsViewControllerFactory.makeSegmentsViewController()
+        try self.embed(vc,
+                       containerView: self.segmentsContainerView)
+        self.segmentsViewController = vc
+    }
+    
+    func removeSegmentsViewController() throws {
+        guard self.segmentsViewController != nil else {
+            let error: NSError = NSError(domain: ErrorConstants.errorDomainName,
+                                         code: ErrorConstants.ErrorCodeDescription.segmentsViewControllerIsNil.code,
+                                         userInfo: [
+                                            NSLocalizedDescriptionKey: ErrorConstants.ErrorCodeDescription.segmentsViewControllerIsNil.description
+            ])
+            throw error
+        }
+        try self.remove(self.segmentsViewController!)
+        self.segmentsViewController = nil
+    }
+}
+
+// MARK: - Errors
+private extension RootViewController {
+    
+    enum ErrorConstants {
+        static let errorDomainName: String = "\(AppConstants.projectName).\(String(describing: RootViewController.self))"
         
-        // Do any additional setup after loading the view.
+        enum ErrorCodeDescription {
+            static let segmentsViewControllerParentNotNil: (code: Int, description: String)
+                = (9001, "\(String(describing: SegmentsViewController.self)) instance has a parent view controller!")
+            static let segmentsViewControllerIsNil: (code: Int, description: String)
+                = (9002, "\(String(describing: SegmentsViewController.self)) instance is nil!")
+        }
     }
 }

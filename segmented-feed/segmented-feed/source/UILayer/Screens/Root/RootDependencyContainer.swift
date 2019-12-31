@@ -9,7 +9,9 @@
 import Foundation
 import SimpleLogger
 
-class RootDependencyContainer: RootViewControllerFactory {
+protocol RootDependencyContainer: AnyObject {}
+
+class RootDependencyContainerImpl: RootDependencyContainer, RootViewControllerFactory {
     
     // MARK: - Initialization
     init() {
@@ -24,7 +26,9 @@ class RootDependencyContainer: RootViewControllerFactory {
     // MARK: - RootViewControllerFactory protocol
     func makeRootViewController() -> RootViewController {
         let vm: RootViewModel = self.makeRootViewModel()
-        let vc: RootViewController = RootViewController(viewModel: vm)
+        let factory: SegmentsViewControllerFactory = SegmentsDependencyContainer(parent: self)
+        let vc: RootViewController = RootViewController(viewModel: vm,
+                                                        segmentsViewControllerFactory: factory)
         return vc
     }
     
