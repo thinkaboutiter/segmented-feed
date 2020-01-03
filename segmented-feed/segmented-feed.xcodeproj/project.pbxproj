@@ -27,7 +27,7 @@
 		4F38042123B8C27C00A765A3 /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38042023B8C27C00A765A3 /* Segment.swift */; };
 		4F38042423B8C43C00A765A3 /* BaseCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38042323B8C43C00A765A3 /* BaseCollectionView.swift */; };
 		4F38042623B8C4DD00A765A3 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38042523B8C4DD00A765A3 /* BaseCollectionViewCell.swift */; };
-		4F38042823B8C55600A765A3 /* SegmentsCollecionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38042723B8C55600A765A3 /* SegmentsCollecionView.swift */; };
+		4F38042823B8C55600A765A3 /* SegmentsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38042723B8C55600A765A3 /* SegmentsCollectionView.swift */; };
 		4F38042A23B8C59F00A765A3 /* SegmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38042923B8C59F00A765A3 /* SegmentCollectionViewCell.swift */; };
 		4F38042C23B8C8A000A765A3 /* SegmentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F38042B23B8C8A000A765A3 /* SegmentCollectionViewCell.xib */; };
 		4F38042E23B8D69D00A765A3 /* CollectionViewDimensionsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38042D23B8D69D00A765A3 /* CollectionViewDimensionsProvider.swift */; };
@@ -62,7 +62,7 @@
 		4F38042023B8C27C00A765A3 /* Segment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
 		4F38042323B8C43C00A765A3 /* BaseCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionView.swift; sourceTree = "<group>"; };
 		4F38042523B8C4DD00A765A3 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
-		4F38042723B8C55600A765A3 /* SegmentsCollecionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentsCollecionView.swift; sourceTree = "<group>"; };
+		4F38042723B8C55600A765A3 /* SegmentsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentsCollectionView.swift; sourceTree = "<group>"; };
 		4F38042923B8C59F00A765A3 /* SegmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentCollectionViewCell.swift; sourceTree = "<group>"; };
 		4F38042B23B8C8A000A765A3 /* SegmentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentCollectionViewCell.xib; sourceTree = "<group>"; };
 		4F38042D23B8D69D00A765A3 /* CollectionViewDimensionsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDimensionsProvider.swift; sourceTree = "<group>"; };
@@ -291,7 +291,7 @@
 		4F38042223B8C40B00A765A3 /* _customUI */ = {
 			isa = PBXGroup;
 			children = (
-				4F38042723B8C55600A765A3 /* SegmentsCollecionView.swift */,
+				4F38042723B8C55600A765A3 /* SegmentsCollectionView.swift */,
 				4F38042923B8C59F00A765A3 /* SegmentCollectionViewCell.swift */,
 				4F38042B23B8C8A000A765A3 /* SegmentCollectionViewCell.xib */,
 			);
@@ -486,7 +486,7 @@
 				4F3803FB23B5816D00A765A3 /* SegmentsModel.swift in Sources */,
 				4F1B720B23B3B4FC00581A6D /* RootDependencyContainer.swift in Sources */,
 				4F364B0123B39C4100865533 /* RootViewController.swift in Sources */,
-				4F38042823B8C55600A765A3 /* SegmentsCollecionView.swift in Sources */,
+				4F38042823B8C55600A765A3 /* SegmentsCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
