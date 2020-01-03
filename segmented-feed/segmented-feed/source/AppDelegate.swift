@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
         let vc: RootViewController = self.rootViewControllerFactory.makeRootViewController()
-        let nc: UINavigationController = UINavigationController(rootViewController: vc)
+        let nc: BaseNavigationController = BaseNavigationController(rootViewController: vc)
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = nc
         self.window?.makeKeyAndVisible()

@@ -39,6 +39,12 @@
 		4FD7B3F923BF917E0026A5C0 /* EmbeddingDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7B3F823BF917E0026A5C0 /* EmbeddingDemoViewController.swift */; };
 		4FD7B3FB23BF91C50026A5C0 /* EmbeddingDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FD7B3FA23BF91C50026A5C0 /* EmbeddingDemoViewController.xib */; };
 		4FD7B3FD23BF92000026A5C0 /* EmbeddingDemoDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7B3FC23BF92000026A5C0 /* EmbeddingDemoDependencyContainer.swift */; };
+		4FD7B40023C006AF0026A5C0 /* SamplesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7B3FF23C006AF0026A5C0 /* SamplesTableView.swift */; };
+		4FD7B40223C006C40026A5C0 /* SampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7B40123C006C40026A5C0 /* SampleTableViewCell.swift */; };
+		4FD7B40423C006D80026A5C0 /* SampleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FD7B40323C006D80026A5C0 /* SampleTableViewCell.xib */; };
+		4FD7B40623C006F80026A5C0 /* BaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7B40523C006F80026A5C0 /* BaseTableView.swift */; };
+		4FD7B40823C007330026A5C0 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7B40723C007330026A5C0 /* BaseNavigationController.swift */; };
+		4FD7B40A23C0080D0026A5C0 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7B40923C0080D0026A5C0 /* BaseTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +81,9 @@
 		4FD7B3F823BF917E0026A5C0 /* EmbeddingDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddingDemoViewController.swift; sourceTree = "<group>"; };
 		4FD7B3FA23BF91C50026A5C0 /* EmbeddingDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmbeddingDemoViewController.xib; sourceTree = "<group>"; };
 		4FD7B3FC23BF92000026A5C0 /* EmbeddingDemoDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddingDemoDependencyContainer.swift; sourceTree = "<group>"; };
+		4FD7B40523C006F80026A5C0 /* BaseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableView.swift; sourceTree = "<group>"; };
+		4FD7B40723C007330026A5C0 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		4FD7B40923C0080D0026A5C0 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,9 +225,12 @@
 		4F364AF023B3998B00865533 /* _UIBaseClasses */ = {
 			isa = PBXGroup;
 			children = (
-				4F364AFE23B39BCC00865533 /* BaseViewController.swift */,
 				4F38042323B8C43C00A765A3 /* BaseCollectionView.swift */,
 				4F38042523B8C4DD00A765A3 /* BaseCollectionViewCell.swift */,
+				4FD7B40723C007330026A5C0 /* BaseNavigationController.swift */,
+				4FD7B40523C006F80026A5C0 /* BaseTableView.swift */,
+				4FD7B40923C0080D0026A5C0 /* BaseTableViewCell.swift */,
+				4F364AFE23B39BCC00865533 /* BaseViewController.swift */,
 				4F38042D23B8D69D00A765A3 /* CollectionViewDimensionsProvider.swift */,
 			);
 			path = _UIBaseClasses;
@@ -467,9 +479,12 @@
 				4F38042123B8C27C00A765A3 /* Segment.swift in Sources */,
 				4F364AFF23B39BCC00865533 /* BaseViewController.swift in Sources */,
 				4F364B0523B3B03600865533 /* RootViewModel.swift in Sources */,
+				4FD7B40623C006F80026A5C0 /* BaseTableView.swift in Sources */,
+				4FD7B40A23C0080D0026A5C0 /* BaseTableViewCell.swift in Sources */,
 				4F38042A23B8C59F00A765A3 /* SegmentCollectionViewCell.swift in Sources */,
 				4FD7B3F923BF917E0026A5C0 /* EmbeddingDemoViewController.swift in Sources */,
 				4F3803FD23B581CF00A765A3 /* SegmentsViewModel.swift in Sources */,
+				4FD7B40823C007330026A5C0 /* BaseNavigationController.swift in Sources */,
 				4F38042623B8C4DD00A765A3 /* BaseCollectionViewCell.swift in Sources */,
 				4F3803FF23B5822B00A765A3 /* SegmentsViewController.swift in Sources */,
 				4F38042E23B8D69D00A765A3 /* CollectionViewDimensionsProvider.swift in Sources */,
