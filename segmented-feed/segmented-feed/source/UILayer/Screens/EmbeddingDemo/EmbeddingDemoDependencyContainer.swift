@@ -30,7 +30,9 @@ class EmbeddingDemoDependencyContainerImpl: EmbeddingDemoDependencyContainer, Em
     // MARK: - EmbeddingDemoViewControllerFactory protocol
     func makeEmbeddingDemoViewController() -> EmbeddingDemoViewController {
         let vm: EmbeddingDemoViewModel = self.makeEmbeddingDemoViewModel()
-        let vc: EmbeddingDemoViewController = EmbeddingDemoViewController(viewModel: vm)
+        let factory: SegmentsViewControllerFactory = SegmentsDependencyContainerImpl()
+        let vc: EmbeddingDemoViewController = EmbeddingDemoViewController(viewModel: vm,
+                                                                          segmentsViewControllerFactory: factory)
         return vc
     }
     

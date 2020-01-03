@@ -13,13 +13,9 @@ protocol SegmentsDependencyContainer: AnyObject {}
 
 class SegmentsDependencyContainerImpl: SegmentsDependencyContainer, SegmentsViewControllerFactory {
     
-    // MARK: - Properties
-    private let parent: RootDependencyContainer
-    
     // MARK: - Initialization
-    init(parent: RootDependencyContainer) {
+    init() {
         // setup
-        self.parent = parent
         Logger.success.message()
     }
     
