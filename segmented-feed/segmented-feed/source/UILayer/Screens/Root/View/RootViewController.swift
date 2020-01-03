@@ -113,6 +113,7 @@ private extension RootViewController {
         try self.embed(vc,
                        containerView: self.segmentsContainerView)
         
+        // initial pre-selection
         let segment: Segment = try vc.selectedSegment()
         self.didSelectSegment(segment)
         
