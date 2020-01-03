@@ -9,7 +9,9 @@
 import Foundation
 import SimpleLogger
 
-class SegmentsDependencyContainer: SegmentsViewControllerFactory {
+protocol SegmentsDependencyContainer: AnyObject {}
+
+class SegmentsDependencyContainerImpl: SegmentsDependencyContainer, SegmentsViewControllerFactory {
     
     // MARK: - Properties
     private let parent: RootDependencyContainer
