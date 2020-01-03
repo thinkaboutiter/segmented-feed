@@ -18,7 +18,6 @@ class RootViewController: BaseViewController, RootViewModelConsumer {
     
     // MARK: - Properties
     private let viewModel: RootViewModel
-    @IBOutlet private weak var actionButton: UIButton!
     private let embeddingDemoViewControllerFactory: EmbeddingDemoViewControllerFactory
     
     // MARK: - Initialization
@@ -53,14 +52,6 @@ class RootViewController: BaseViewController, RootViewModelConsumer {
         super.viewDidLoad()
         self.configure_ui()
     }
-    
-    // MARK: - Actions
-    @IBAction func actionButton_touchUpInside(_ sender: UIButton) {
-        Logger.debug.message()
-        let vc: EmbeddingDemoViewController = self.embeddingDemoViewControllerFactory.makeEmbeddingDemoViewController()
-        self.navigationController?.pushViewController(vc,
-                                                      animated: true)
-    }
 }
 
 // MARK: - UI configurations
@@ -69,7 +60,6 @@ private extension RootViewController {
     func configure_ui() {
         self.configure_title(&self.title)
         self.configure_backBarButtonItem(&self.navigationItem.backBarButtonItem)
-        self.configure_actionButton(self.actionButton)
     }
     
     func configure_title(_ title: inout String?) {
@@ -81,11 +71,5 @@ private extension RootViewController {
                                style: .plain,
                                target: nil,
                                action: nil)
-    }
-    
-    func configure_actionButton(_ button: UIButton) {
-        let title: String = NSLocalizedString("RootViewController.actionButton.title.showDemo",
-                                              comment: AppConstants.LocalizedStringComment.buttonTitle)
-        button.setTitle(title, for: .normal)
     }
 }

@@ -9,7 +9,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RootViewController" customModule="segmented_feed" customModuleProvider="target">
             <connections>
-                <outlet property="actionButton" destination="vdP-nO-YHS" id="Y3i-aJ-rkh"/>
                 <outlet property="view" destination="uUd-KY-ArK" id="UHn-S6-lHA"/>
             </connections>
         </placeholder>
@@ -17,24 +16,7 @@
         <view contentMode="scaleToFill" id="uUd-KY-ArK">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdP-nO-YHS" userLabel="action-button">
-                    <rect key="frame" x="177" y="810" width="60" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="qQM-lP-lqm"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                    <state key="normal" title="Button"/>
-                    <connections>
-                        <action selector="actionButton_touchUpInside:" destination="-1" eventType="touchUpInside" id="gfW-G5-twe"/>
-                    </connections>
-                </button>
-            </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-            <constraints>
-                <constraint firstItem="vdP-nO-YHS" firstAttribute="centerX" secondItem="uUd-KY-ArK" secondAttribute="centerX" id="tmY-d7-agd"/>
-                <constraint firstItem="I8P-3O-wU2" firstAttribute="bottom" secondItem="vdP-nO-YHS" secondAttribute="bottom" constant="8" id="w7r-tW-vTR"/>
-            </constraints>
             <viewLayoutGuide key="safeArea" id="I8P-3O-wU2"/>
             <point key="canvasLocation" x="-293" y="75"/>
         </view>
