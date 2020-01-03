@@ -78,8 +78,13 @@ class EmbeddingDemoViewController: BaseViewController, EmbeddingDemoViewModelCon
 private extension EmbeddingDemoViewController {
     
     func configure_ui() {
+        self.configure_title(&self.title)
         self.configure_segmentsContainerView(self.segmentsContainerView)
         self.configure_embeddingActionsButton(self.embeddingActionsButton)
+    }
+    
+    func configure_title(_ title: inout String?) {
+        title = String(describing: EmbeddingDemoViewController.self)
     }
     
     func configure_segmentsContainerView(_ view: UIView) {

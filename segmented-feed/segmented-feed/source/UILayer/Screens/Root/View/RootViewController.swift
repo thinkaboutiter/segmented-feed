@@ -18,7 +18,8 @@ class RootViewController: BaseViewController, RootViewModelConsumer {
     
     // MARK: - Properties
     private let viewModel: RootViewModel
-    @IBOutlet private weak var embeddingActionsButton: UIButton!
+    @IBOutlet private weak var actionButton: UIButton!
+    private let embeddingDemoViewControllerFactory: EmbeddingDemoViewControllerFactory
     
     // MARK: - Initialization
     @available(*, unavailable, message: "Creating this view controller with `init(coder:)` is unsupported in favor of initializer dependency injection.")
@@ -31,8 +32,11 @@ class RootViewController: BaseViewController, RootViewModelConsumer {
         fatalError("Creating this view controller with `init(nibName:bundle:)` is unsupported in favor of dependency injection initializer.")
     }
     
-    init(viewModel: RootViewModel) {
+    init(viewModel: RootViewModel,
+         embeddingDemoViewControllerFactory: EmbeddingDemoViewControllerFactory)
+    {
         self.viewModel = viewModel
+        self.embeddingDemoViewControllerFactory = embeddingDemoViewControllerFactory
         super.init(nibName: String(describing: RootViewController.self), bundle: nil)
         self.viewModel.setViewModelConsumer(self)
         Logger.success.message()
@@ -51,8 +55,11 @@ class RootViewController: BaseViewController, RootViewModelConsumer {
     }
     
     // MARK: - Actions
-    @IBAction func embeddingActionsButton_touchUpInside(_ sender: UIButton) {
+    @IBAction func actionButton_touchUpInside(_ sender: UIButton) {
         Logger.debug.message()
+        let vc: EmbeddingDemoViewController = self.embeddingDemoViewControllerFactory.makeEmbeddingDemoViewController()
+        self.navigationController?.pushViewController(vc,
+                                                      animated: true)
     }
 }
 
@@ -60,6 +67,25 @@ class RootViewController: BaseViewController, RootViewModelConsumer {
 private extension RootViewController {
     
     func configure_ui() {
-        
+        self.configure_title(&self.title)
+        self.configure_backBarButtonItem(&self.navigationItem.backBarButtonItem)
+        self.configure_actionButton(self.actionButton)
+    }
+    
+    func configure_title(_ title: inout String?) {
+        title = String(describing: RootViewController.self)
+    }
+    
+    func configure_backBarButtonItem(_ item: inout UIBarButtonItem?) {
+        item = UIBarButtonItem(title: nil,
+                               style: .plain,
+                               target: nil,
+                               action: nil)
+    }
+    
+    func configure_actionButton(_ button: UIButton) {
+        let title: String = NSLocalizedString("RootViewController.actionButton.title.showDemo",
+                                              comment: AppConstants.LocalizedStringComment.buttonTitle)
+        button.setTitle(title, for: .normal)
     }
 }
