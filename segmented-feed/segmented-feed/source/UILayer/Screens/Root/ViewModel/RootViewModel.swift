@@ -16,6 +16,7 @@ protocol RootViewModelConsumer: AnyObject {
 /// APIs for `ViewModel` to expose to `View`
 protocol RootViewModel: AnyObject {
     func setViewModelConsumer(_ newValue: RootViewModelConsumer)
+    var rows: [RootTableRowStaticData] { get }
 }
 
 class RootViewModelImpl: RootViewModel, RootModelConsumer {
@@ -38,6 +39,11 @@ class RootViewModelImpl: RootViewModel, RootModelConsumer {
     // MARK: - RootViewModel protocol
     func setViewModelConsumer(_ newValue: RootViewModelConsumer) {
         self.viewModelConsumer = newValue
+    }
+    
+    var rows: [RootTableRowStaticData] {
+        let result: [RootTableRowStaticData] = self.model.rows
+        return result
     }
     
     // MARK: - RootModelConsumer protocol
