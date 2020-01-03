@@ -169,6 +169,7 @@
 		4F364AEC23B3998B00865533 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				4FD7B3F023BF852A0026A5C0 /* EmbeddingDemo */,
 				4F364AED23B3998B00865533 /* Root */,
 			);
 			path = Screens;
@@ -311,6 +312,37 @@
 				4F38040F23B7FD4500A765A3 /* Localizable.strings */,
 			);
 			path = "segmented-feed";
+			sourceTree = "<group>";
+		};
+		4FD7B3F023BF852A0026A5C0 /* EmbeddingDemo */ = {
+			isa = PBXGroup;
+			children = (
+				4FD7B3F123BF85530026A5C0 /* Model */,
+				4FD7B3F223BF855B0026A5C0 /* View */,
+				4FD7B3F323BF85610026A5C0 /* ViewModel */,
+			);
+			path = EmbeddingDemo;
+			sourceTree = "<group>";
+		};
+		4FD7B3F123BF85530026A5C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4FD7B3F223BF855B0026A5C0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4FD7B3F323BF85610026A5C0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

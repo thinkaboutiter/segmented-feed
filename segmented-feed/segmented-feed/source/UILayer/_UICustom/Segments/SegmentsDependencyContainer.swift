@@ -34,7 +34,7 @@ class SegmentsDependencyContainer: SegmentsViewControllerFactory {
     }
     
     private func makeSegmentsViewModel() -> SegmentsViewModel {
-        let model: SegmentsModel = SegmentsModelImpl()
+        let model: SegmentsModel = SegmentsModelImpl(segments: DemoSegment.allCases)
         let result: SegmentsViewModel = SegmentsViewModelImpl(model: model)
         return result
     }
