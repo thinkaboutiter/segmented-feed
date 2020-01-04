@@ -26,14 +26,14 @@ class RootDependencyContainerImpl: RootDependencyContainer, RootViewControllerFa
     // MARK: - RootViewControllerFactory protocol
     func makeRootViewController() -> RootViewController {
         let vm: RootViewModel = self.makeRootViewModel()
-        let factory: EmbeddingDemoViewControllerFactory = EmbeddingDemoDependencyContainerImpl(parent: self)
+        let factory: SamplesViewControllerFactory = SamplesDependencyContainerImpl(parent: self)
         let vc: RootViewController = RootViewController(viewModel: vm,
-                                                        embeddingDemoViewControllerFactory: factory)
+                                                        samplesViewControllerFactory: factory)
         return vc
     }
     
     private func makeRootViewModel() -> RootViewModel {
-        let model: RootModel = RootModelImpl(rows: Sample.allCases)
+        let model: RootModel = RootModelImpl()
         let result: RootViewModel = RootViewModelImpl(model: model)
         return result
     }

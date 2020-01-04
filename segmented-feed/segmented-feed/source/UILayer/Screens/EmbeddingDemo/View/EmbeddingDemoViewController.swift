@@ -84,7 +84,8 @@ private extension EmbeddingDemoViewController {
     }
     
     func configure_title(_ title: inout String?) {
-        title = String(describing: EmbeddingDemoViewController.self)
+        title = NSLocalizedString("EmbeddingDemoViewController.title.embedding-demo",
+                                  comment: AppConstants.LocalizedStringComment.screenTitle)
     }
     
     func configure_segmentsContainerView(_ view: UIView) {

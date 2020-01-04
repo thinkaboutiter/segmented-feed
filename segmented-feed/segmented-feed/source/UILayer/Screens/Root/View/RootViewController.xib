@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -9,7 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RootViewController" customModule="segmented_feed" customModuleProvider="target">
             <connections>
-                <outlet property="samplesTableView" destination="LyJ-p0-Hca" id="cUY-Er-Lyb"/>
                 <outlet property="view" destination="uUd-KY-ArK" id="UHn-S6-lHA"/>
             </connections>
         </placeholder>
@@ -17,18 +17,7 @@
         <view contentMode="scaleToFill" id="uUd-KY-ArK">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LyJ-p0-Hca" userLabel="samples-table-view" customClass="SamplesTableView" customModule="segmented_feed" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                </tableView>
-            </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-            <constraints>
-                <constraint firstItem="I8P-3O-wU2" firstAttribute="trailing" secondItem="LyJ-p0-Hca" secondAttribute="trailing" id="L2W-Zc-MD1"/>
-                <constraint firstItem="LyJ-p0-Hca" firstAttribute="leading" secondItem="I8P-3O-wU2" secondAttribute="leading" id="Y98-uX-V0l"/>
-                <constraint firstItem="I8P-3O-wU2" firstAttribute="bottom" secondItem="LyJ-p0-Hca" secondAttribute="bottom" id="hqS-QQ-fMy"/>
-                <constraint firstItem="LyJ-p0-Hca" firstAttribute="top" secondItem="I8P-3O-wU2" secondAttribute="top" id="kA1-we-HvJ"/>
-            </constraints>
             <viewLayoutGuide key="safeArea" id="I8P-3O-wU2"/>
             <point key="canvasLocation" x="-293" y="75"/>
         </view>
