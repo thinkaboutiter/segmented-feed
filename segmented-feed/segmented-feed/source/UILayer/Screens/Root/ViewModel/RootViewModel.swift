@@ -17,6 +17,7 @@ protocol RootViewModelConsumer: AnyObject {
 protocol RootViewModel: AnyObject {
     func setViewModelConsumer(_ newValue: RootViewModelConsumer)
     var rows: [Sample] { get }
+    func sample(for indexPath: IndexPath) throws -> Sample
 }
 
 class RootViewModelImpl: RootViewModel, RootModelConsumer {
@@ -46,6 +47,34 @@ class RootViewModelImpl: RootViewModel, RootModelConsumer {
         return result
     }
     
+    func sample(for indexPath: IndexPath) throws -> Sample {
+        let index: Int = indexPath.row
+        let samples: [Sample] = self.rows
+        let range: Range<Int> = 0..<samples.count
+        guard range ~= index
+        else {
+            let error: NSError = NSError(domain: ErrorConstants.errorDomainName,
+                                         code: ErrorConstants.ErrorCode.indexOutOfBounds,
+                                         userInfo: [
+                                            NSLocalizedDescriptionKey: "index=\(index) out of range=\(range)!"
+            ])
+            throw error
+        }
+        let result: Sample = samples[index]
+        return result
+    }
+    
     // MARK: - RootModelConsumer protocol
 }
 
+// MARK: - Errors
+private extension RootViewModelImpl {
+    
+    enum ErrorConstants {
+        static let errorDomainName: String = "\(AppConstants.projectName).\(String(describing: RootViewModelImpl.self))"
+        
+        enum ErrorCode {
+            static let indexOutOfBounds: Int = 9001
+        }
+    }
+}
