@@ -30,12 +30,14 @@ class SamplesDependencyContainerImpl: SamplesDependencyContainer, SamplesViewCon
     // MARK: - SamplesViewControllerFactory protocol
     func makeSamplesViewController() -> SamplesViewController {
         let vm: SamplesViewModel = self.makeSamplesViewModel()
-        let vc: SamplesViewController = SamplesViewController(viewModel: vm)
+        let factory: EmbeddingDemoViewControllerFactory = EmbeddingDemoDependencyContainerImpl(parent: self)
+        let vc: SamplesViewController = SamplesViewController(viewModel: vm,
+                                                              embeddingDemoViewControllerFactory: factory)
         return vc
     }
     
     private func makeSamplesViewModel() -> SamplesViewModel {
-        let model: SamplesModel = SamplesModelImpl()
+        let model: SamplesModel = SamplesModelImpl(samples: Sample.allCases)
         let result: SamplesViewModel = SamplesViewModelImpl(model: model)
         return result
     }

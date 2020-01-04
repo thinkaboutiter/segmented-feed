@@ -16,6 +16,8 @@ protocol SamplesViewModelConsumer: AnyObject {
 /// APIs for `ViewModel` to expose to `View`
 protocol SamplesViewModel: AnyObject {
     func setViewModelConsumer(_ newValue: SamplesViewModelConsumer)
+    var samples: [Sample] { get }
+    func sample(for indexPath: IndexPath) throws -> Sample
 }
 
 class SamplesViewModelImpl: SamplesViewModel, SamplesModelConsumer {
@@ -40,6 +42,39 @@ class SamplesViewModelImpl: SamplesViewModel, SamplesModelConsumer {
         self.viewModelConsumer = newValue
     }
     
+    var samples: [Sample] {
+        let result: [Sample] = self.model.samples
+        return result
+    }
+    
+    func sample(for indexPath: IndexPath) throws -> Sample {
+        let index: Int = indexPath.row
+        let samples: [Sample] = self.samples
+        let range: Range<Int> = 0..<samples.count
+        guard range ~= index
+        else {
+            let error: NSError = NSError(domain: ErrorConstants.errorDomainName,
+                                         code: ErrorConstants.ErrorCode.indexOutOfBounds,
+                                         userInfo: [
+                                            NSLocalizedDescriptionKey: "index=\(index) out of range=\(range)!"
+            ])
+            throw error
+        }
+        let result: Sample = samples[index]
+        return result
+    }
+    
     // MARK: - SamplesModelConsumer protocol
 }
 
+// MARK: - Errors
+private extension SamplesViewModelImpl {
+    
+    enum ErrorConstants {
+        static let errorDomainName: String = "\(AppConstants.projectName).\(String(describing: RootViewModelImpl.self))"
+        
+        enum ErrorCode {
+            static let indexOutOfBounds: Int = 9001
+        }
+    }
+}

@@ -14,10 +14,10 @@ protocol EmbeddingDemoDependencyContainer: AnyObject {}
 class EmbeddingDemoDependencyContainerImpl: EmbeddingDemoDependencyContainer, EmbeddingDemoViewControllerFactory {
     
     // MARK: - Properties
-    private let parent: RootDependencyContainer
+    private let parent: SamplesDependencyContainer
     
     // MARK: - Initialization
-    init(parent: RootDependencyContainer) {
+    init(parent: SamplesDependencyContainer) {
         // setup
         self.parent = parent
         Logger.success.message()

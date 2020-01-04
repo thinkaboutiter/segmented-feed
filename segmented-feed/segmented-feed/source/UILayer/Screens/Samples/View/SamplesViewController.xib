@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SamplesViewController" customModule="segmented_feed" customModuleProvider="target">
             <connections>
+                <outlet property="samplesTableView" destination="XxZ-1e-2Li" id="0te-Lq-A6D"/>
                 <outlet property="view" destination="f2m-iM-WCd" id="4Tp-mo-lNt"/>
             </connections>
         </placeholder>
@@ -17,7 +18,19 @@
         <view contentMode="scaleToFill" id="f2m-iM-WCd">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XxZ-1e-2Li" userLabel="samples-table-view" customClass="SamplesTableView" customModule="segmented_feed" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="xlu-3v-Jhs" firstAttribute="trailing" secondItem="XxZ-1e-2Li" secondAttribute="trailing" id="Art-Vb-I4P"/>
+                <constraint firstItem="xlu-3v-Jhs" firstAttribute="bottom" secondItem="XxZ-1e-2Li" secondAttribute="bottom" id="IpU-Ry-aWg"/>
+                <constraint firstItem="XxZ-1e-2Li" firstAttribute="top" secondItem="xlu-3v-Jhs" secondAttribute="top" id="cbj-gC-c0D"/>
+                <constraint firstItem="XxZ-1e-2Li" firstAttribute="leading" secondItem="xlu-3v-Jhs" secondAttribute="leading" id="ejl-b6-a9j"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="xlu-3v-Jhs"/>
             <point key="canvasLocation" x="161" y="-46"/>
         </view>

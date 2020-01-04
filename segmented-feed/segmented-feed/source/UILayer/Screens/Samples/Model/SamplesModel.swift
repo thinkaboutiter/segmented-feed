@@ -17,6 +17,7 @@ protocol SamplesModelConsumer: AnyObject {
 /// APIs for `Model` to expose to `ViewModel`
 protocol SamplesModel: AnyObject {
     func setModelConsumer(_ newValue: SamplesModelConsumer)
+    var samples: [Sample] { get }
 }
 
 class SamplesModelImpl: SamplesModel {
@@ -25,7 +26,8 @@ class SamplesModelImpl: SamplesModel {
     private weak var modelConsumer: SamplesModelConsumer!
     
     // MARK: - Initialization
-    init() {
+    init(samples: [Sample]) {
+        self.samples = samples
         Logger.success.message()
     }
     
@@ -37,4 +39,6 @@ class SamplesModelImpl: SamplesModel {
     func setModelConsumer(_ newValue: SamplesModelConsumer) {
         self.modelConsumer = newValue
     }
+    
+    let samples: [Sample]
 }
