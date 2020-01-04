@@ -41,7 +41,6 @@
 		4FD7B3FD23BF92000026A5C0 /* EmbeddingDemoDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7B3FC23BF92000026A5C0 /* EmbeddingDemoDependencyContainer.swift */; };
 		4FD7B40023C006AF0026A5C0 /* SamplesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7B3FF23C006AF0026A5C0 /* SamplesTableView.swift */; };
 		4FD7B40223C006C40026A5C0 /* SampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7B40123C006C40026A5C0 /* SampleTableViewCell.swift */; };
-		4FD7B40423C006D80026A5C0 /* SampleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FD7B40323C006D80026A5C0 /* SampleTableViewCell.xib */; };
 		4FD7B40623C006F80026A5C0 /* BaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7B40523C006F80026A5C0 /* BaseTableView.swift */; };
 		4FD7B40823C007330026A5C0 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7B40723C007330026A5C0 /* BaseNavigationController.swift */; };
 		4FD7B40A23C0080D0026A5C0 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7B40923C0080D0026A5C0 /* BaseTableViewCell.swift */; };
@@ -81,6 +80,8 @@
 		4FD7B3F823BF917E0026A5C0 /* EmbeddingDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddingDemoViewController.swift; sourceTree = "<group>"; };
 		4FD7B3FA23BF91C50026A5C0 /* EmbeddingDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmbeddingDemoViewController.xib; sourceTree = "<group>"; };
 		4FD7B3FC23BF92000026A5C0 /* EmbeddingDemoDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddingDemoDependencyContainer.swift; sourceTree = "<group>"; };
+		4FD7B3FF23C006AF0026A5C0 /* SamplesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplesTableView.swift; sourceTree = "<group>"; };
+		4FD7B40123C006C40026A5C0 /* SampleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTableViewCell.swift; sourceTree = "<group>"; };
 		4FD7B40523C006F80026A5C0 /* BaseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableView.swift; sourceTree = "<group>"; };
 		4FD7B40723C007330026A5C0 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		4FD7B40923C0080D0026A5C0 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
@@ -216,6 +217,7 @@
 		4F364AEF23B3998B00865533 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4FD7B3FE23C005CC0026A5C0 /* _customUI */,
 				4F364B0023B39C4100865533 /* RootViewController.swift */,
 				4F1B720823B3B47F00581A6D /* RootViewController.xib */,
 			);
@@ -372,6 +374,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		4FD7B3FE23C005CC0026A5C0 /* _customUI */ = {
+			isa = PBXGroup;
+			children = (
+				4FD7B3FF23C006AF0026A5C0 /* SamplesTableView.swift */,
+				4FD7B40123C006C40026A5C0 /* SampleTableViewCell.swift */,
+			);
+			path = _customUI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -496,8 +507,10 @@
 				4FD7B3FD23BF92000026A5C0 /* EmbeddingDemoDependencyContainer.swift in Sources */,
 				4F364B0823B3B07700865533 /* RootModel.swift in Sources */,
 				4F38040523B7EE1D00A765A3 /* AppConstants.swift in Sources */,
+				4FD7B40023C006AF0026A5C0 /* SamplesTableView.swift in Sources */,
 				4FD7B3EC23BAB1590026A5C0 /* String+Extensions.swift in Sources */,
 				4F38040123B5828300A765A3 /* SegmentsDependencyContainer.swift in Sources */,
+				4FD7B40223C006C40026A5C0 /* SampleTableViewCell.swift in Sources */,
 				4F3803FB23B5816D00A765A3 /* SegmentsModel.swift in Sources */,
 				4F1B720B23B3B4FC00581A6D /* RootDependencyContainer.swift in Sources */,
 				4F364B0123B39C4100865533 /* RootViewController.swift in Sources */,
