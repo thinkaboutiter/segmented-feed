@@ -122,4 +122,31 @@ extension RootViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate protocol
 extension RootViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath)
+    {
+        do {
+            let sample: Sample = try self.viewModel.sample(for: indexPath)
+            switch sample {
+            case .embeddingDemo:
+                let vc: EmbeddingDemoViewController = self.embeddingDemoViewControllerFactory.makeEmbeddingDemoViewController()
+                self.navigationController?.pushViewController(vc,
+                                                              animated: true)
+            default:
+                break
+            }
+        }
+        catch let error as NSError {
+            Logger.error.message().object(error)
+            return
+        }
+        tableView.deselectRow(at: indexPath,
+                              animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   canEditRowAt indexPath: IndexPath) -> Bool
+    {
+        return false
+    }
 }
