@@ -33,7 +33,7 @@
 		4F38042E23B8D69D00A765A3 /* CollectionViewDimensionsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38042D23B8D69D00A765A3 /* CollectionViewDimensionsProvider.swift */; };
 		4F5EAFC423B390310024D33E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5EAFC323B390310024D33E /* Assets.xcassets */; };
 		4FD7B3EC23BAB1590026A5C0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7B3EB23BAB1590026A5C0 /* String+Extensions.swift */; };
-		4FD7B3EF23BF824E0026A5C0 /* RootTableRowStaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7B3EE23BF824E0026A5C0 /* RootTableRowStaticData.swift */; };
+		4FD7B3EF23BF824E0026A5C0 /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7B3EE23BF824E0026A5C0 /* Sample.swift */; };
 		4FD7B3F523BF8FD50026A5C0 /* EmbeddingDemoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7B3F423BF8FD50026A5C0 /* EmbeddingDemoModel.swift */; };
 		4FD7B3F723BF91460026A5C0 /* EmbeddingDemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7B3F623BF91460026A5C0 /* EmbeddingDemoViewModel.swift */; };
 		4FD7B3F923BF917E0026A5C0 /* EmbeddingDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7B3F823BF917E0026A5C0 /* EmbeddingDemoViewController.swift */; };
@@ -75,7 +75,7 @@
 		4F5EAFB723B3902C0024D33E /* segmented-feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "segmented-feed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5EAFC323B390310024D33E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4FD7B3EB23BAB1590026A5C0 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		4FD7B3EE23BF824E0026A5C0 /* RootTableRowStaticData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTableRowStaticData.swift; sourceTree = "<group>"; };
+		4FD7B3EE23BF824E0026A5C0 /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
 		4FD7B3F423BF8FD50026A5C0 /* EmbeddingDemoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddingDemoModel.swift; sourceTree = "<group>"; };
 		4FD7B3F623BF91460026A5C0 /* EmbeddingDemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddingDemoViewModel.swift; sourceTree = "<group>"; };
 		4FD7B3F823BF917E0026A5C0 /* EmbeddingDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddingDemoViewController.swift; sourceTree = "<group>"; };
@@ -240,7 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				4F364B0723B3B07700865533 /* RootModel.swift */,
-				4FD7B3EE23BF824E0026A5C0 /* RootTableRowStaticData.swift */,
+				4FD7B3EE23BF824E0026A5C0 /* Sample.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -488,7 +488,7 @@
 				4F38042623B8C4DD00A765A3 /* BaseCollectionViewCell.swift in Sources */,
 				4F3803FF23B5822B00A765A3 /* SegmentsViewController.swift in Sources */,
 				4F38042E23B8D69D00A765A3 /* CollectionViewDimensionsProvider.swift in Sources */,
-				4FD7B3EF23BF824E0026A5C0 /* RootTableRowStaticData.swift in Sources */,
+				4FD7B3EF23BF824E0026A5C0 /* Sample.swift in Sources */,
 				4F3803F323B5627600A765A3 /* UIViewController+Extensions.swift in Sources */,
 				4FD7B3F723BF91460026A5C0 /* EmbeddingDemoViewModel.swift in Sources */,
 				4F38042423B8C43C00A765A3 /* BaseCollectionView.swift in Sources */,

@@ -17,7 +17,7 @@ protocol RootModelConsumer: AnyObject {
 /// APIs for `Model` to expose to `ViewModel`
 protocol RootModel: AnyObject {
     func setModelConsumer(_ newValue: RootModelConsumer)
-    var rows: [RootTableRowStaticData] { get }
+    var rows: [Sample] { get }
 }
 
 class RootModelImpl: RootModel {
@@ -26,7 +26,7 @@ class RootModelImpl: RootModel {
     private weak var modelConsumer: RootModelConsumer!
     
     // MARK: - Initialization
-    init(rows: [RootTableRowStaticData]) {
+    init(rows: [Sample]) {
         self.rows = rows
         Logger.success.message()
     }
@@ -39,5 +39,5 @@ class RootModelImpl: RootModel {
     func setModelConsumer(_ newValue: RootModelConsumer) {
         self.modelConsumer = newValue
     }
-    let rows: [RootTableRowStaticData]
+    let rows: [Sample]
 }

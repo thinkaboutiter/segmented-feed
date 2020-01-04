@@ -33,7 +33,7 @@ class RootDependencyContainerImpl: RootDependencyContainer, RootViewControllerFa
     }
     
     private func makeRootViewModel() -> RootViewModel {
-        let model: RootModel = RootModelImpl(rows: RootTableRowStaticData.allCases)
+        let model: RootModel = RootModelImpl(rows: Sample.allCases)
         let result: RootViewModel = RootViewModelImpl(model: model)
         return result
     }
