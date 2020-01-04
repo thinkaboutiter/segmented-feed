@@ -228,7 +228,6 @@
 		4F364AEF23B3998B00865533 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4FD7B3FE23C005CC0026A5C0 /* _customUI */,
 				4F364B0023B39C4100865533 /* RootViewController.swift */,
 				4F1B720823B3B47F00581A6D /* RootViewController.xib */,
 			);
@@ -371,6 +370,7 @@
 		4F8F801C23C01A2E0067BAEC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4FD7B3FE23C005CC0026A5C0 /* _customUI */,
 				4F8F802223C01AD70067BAEC /* SamplesViewController.swift */,
 				4F8F802423C01B050067BAEC /* SamplesViewController.xib */,
 			);
