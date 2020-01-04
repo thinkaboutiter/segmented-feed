@@ -51,6 +51,7 @@ class RootViewController: BaseViewController, RootViewModelConsumer {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configure_ui()
+        self.embed_samplesViewController()
     }
 }
 
@@ -63,5 +64,21 @@ private extension RootViewController {
     
     func configure_title(_ title: inout String?) {
         title = String(describing: RootViewController.self)
+    }
+}
+
+// MARK: - Embedding
+private extension RootViewController {
+    
+    func embed_samplesViewController() {
+        let vc: SamplesViewController = self.samplesViewControllerFactory.makeSamplesViewController()
+        let nc: BaseNavigationController = BaseNavigationController(rootViewController: vc)
+        do {
+            try self.embed(nc,
+                           containerView: self.view)
+        }
+        catch let error as NSError {
+            Logger.error.message().object(error)
+        }
     }
 }
