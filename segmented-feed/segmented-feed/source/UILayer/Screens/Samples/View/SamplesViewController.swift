@@ -65,7 +65,8 @@ private extension SamplesViewController {
     }
     
     func configure_title(_ title: inout String?) {
-        title = String(describing: SamplesViewController.self)
+        title = NSLocalizedString("SamplesViewController.title.samples",
+                                  comment: AppConstants.LocalizedStringComment.screenTitle)
     }
     
     func configure_backBarButtonItem(_ item: inout UIBarButtonItem?) {

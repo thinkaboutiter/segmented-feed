@@ -16,5 +16,6 @@ enum AppConstants {
         static let buttonTitle: String = "Button title"
         static let segmentTitle: String = "Segment title"
         static let rowTitle: String = "Row title"
+        static let screenTitle: String = "Screen title"
     }
 }
