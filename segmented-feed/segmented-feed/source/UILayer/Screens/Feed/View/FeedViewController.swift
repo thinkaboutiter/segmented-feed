@@ -19,7 +19,8 @@ class FeedViewController: BaseViewController, FeedViewModelConsumer {
     // MARK: - Properties
     private let viewModel: FeedViewModel
     private let segmentsViewControllerFactory: SegmentsViewControllerFactory
-    private weak var segmentsViewController: SegmentsViewController?
+    private lazy var segmentsViewController: SegmentsViewController
+        = self.segmentsViewControllerFactory.makeSegmentsViewController(withSegmentSelectionConsumer: self)
     @IBOutlet private weak var feedTableView: FeedTableView!
     
     // MARK: - Initialization
@@ -84,16 +85,7 @@ private extension FeedViewController {
 private extension FeedViewController {
     
     func selectedDemoSegment() throws -> DemoSegment {
-        guard self.segmentsViewController != nil else {
-            let error: NSError = NSError(domain: ErrorConstants.errorDomainName,
-                                         code: ErrorConstants.ErrorCodeDescription.segmentsViewControllerIsNil.code,
-                                         userInfo: [
-                                            NSLocalizedDescriptionKey: ErrorConstants.ErrorCodeDescription.segmentsViewControllerIsNil.description
-            ])
-            throw error
-        }
-        
-        guard let result: DemoSegment = try self.segmentsViewController!.selectedSegment() as? DemoSegment
+        guard let result: DemoSegment = try self.segmentsViewController.selectedSegment() as? DemoSegment
         else {
             let error: NSError = NSError(domain: ErrorConstants.errorDomainName,
                                          code: ErrorConstants.ErrorCodeDescription.unableToObtainDemoSegment.code,
@@ -224,37 +216,12 @@ private extension FeedViewController {
 private extension FeedViewController {
     
     func embedSegmentsViewController(into containerView: UIView) throws {
-        guard self.segmentsViewController?.parent == nil else {
-            let error: NSError = NSError(domain: ErrorConstants.errorDomainName,
-                                         code: ErrorConstants.ErrorCodeDescription.segmentsViewControllerParentNotNil.code,
-                                         userInfo: [
-                                            NSLocalizedDescriptionKey: ErrorConstants.ErrorCodeDescription.segmentsViewControllerParentNotNil.description
-            ])
-            throw error
-        }
-        self.segmentsViewController = nil
-        let vc: SegmentsViewController = self.segmentsViewControllerFactory.makeSegmentsViewController(withSegmentSelectionConsumer: self)
-        try self.embed(vc,
+        try self.embed(self.segmentsViewController,
                        containerView: containerView)
         
         // initial pre-selection
-        let segment: Segment = try vc.selectedSegment()
+        let segment: Segment = try self.segmentsViewController.selectedSegment()
         self.didSelectSegment(segment)
-        
-        self.segmentsViewController = vc
-    }
-    
-    func removeSegmentsViewController() throws {
-        guard self.segmentsViewController != nil else {
-            let error: NSError = NSError(domain: ErrorConstants.errorDomainName,
-                                         code: ErrorConstants.ErrorCodeDescription.segmentsViewControllerIsNil.code,
-                                         userInfo: [
-                                            NSLocalizedDescriptionKey: ErrorConstants.ErrorCodeDescription.segmentsViewControllerIsNil.description
-            ])
-            throw error
-        }
-        try self.remove(self.segmentsViewController!)
-        self.segmentsViewController = nil
     }
 }
 
@@ -276,12 +243,8 @@ private extension FeedViewController {
         static let errorDomainName: String = "\(AppConstants.projectName).\(String(describing: FeedViewController.self))"
         
         enum ErrorCodeDescription {
-            static let segmentsViewControllerParentNotNil: (code: Int, description: String)
-                = (9001, "\(String(describing: SegmentsViewController.self)) instance has a parent view controller!")
-            static let segmentsViewControllerIsNil: (code: Int, description: String)
-                = (9002, "\(String(describing: SegmentsViewController.self)) instance is nil!")
             static let unableToObtainDemoSegment: (code: Int, description: String)
-                = (9003, "Unable to obtain \(String(describing: DemoSegment.self))!")
+                = (9001, "Unable to obtain \(String(describing: DemoSegment.self))!")
         }
     }
 }
