@@ -10,7 +10,7 @@ import UIKit
 
 protocol Segment {
     var title: String { get }
-    var color: UIColor { get }
+    var color: UIColor? { get }
 }
 
 enum DemoSegment: CaseIterable, Segment {
@@ -37,7 +37,7 @@ enum DemoSegment: CaseIterable, Segment {
         return result
     }
     
-    var color: UIColor {
-        return .purple
+    var color: UIColor? {
+        return UIColor(named: AppConstants.CustomColorName.demoSegmentBackgroundColor)
     }
 }
