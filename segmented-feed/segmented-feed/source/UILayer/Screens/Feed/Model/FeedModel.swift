@@ -17,15 +17,18 @@ protocol FeedModelConsumer: AnyObject {
 /// APIs for `Model` to expose to `ViewModel`
 protocol FeedModel: AnyObject {
     func setModelConsumer(_ newValue: FeedModelConsumer)
+    var feedItems: [DemoSegment : [FeedItem]] { get }
 }
 
 class FeedModelImpl: FeedModel {
     
     // MARK: - Properties
     private weak var modelConsumer: FeedModelConsumer!
+    let feedItems: [DemoSegment : [FeedItem]]
     
     // MARK: - Initialization
-    init() {
+    init(feedItems: [DemoSegment: [FeedItem]]) {
+        self.feedItems = feedItems
         Logger.success.message()
     }
     

@@ -35,7 +35,14 @@ class FeedDependencyContainerImpl: FeedDependencyContainer, FeedViewControllerFa
     }
     
     private func makeFeedViewModel() -> FeedViewModel {
-        let model: FeedModel = FeedModelImpl()
+        let feedItems: [DemoSegment: [FeedItem]] = [
+            .colors: Color.allCases,
+            .tropicFruits: TropicFruit.allCases,
+            .shapes: Shape.allCases,
+            .vegetables: Vegetable.allCases,
+            .planets: Planet.allCases
+        ]
+        let model: FeedModel = FeedModelImpl(feedItems: feedItems)
         let result: FeedViewModel = FeedViewModelImpl(model: model)
         return result
     }

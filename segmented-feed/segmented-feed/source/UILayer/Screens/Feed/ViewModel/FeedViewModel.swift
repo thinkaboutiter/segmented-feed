@@ -16,6 +16,7 @@ protocol FeedViewModelConsumer: AnyObject {
 /// APIs for `ViewModel` to expose to `View`
 protocol FeedViewModel: AnyObject {
     func setViewModelConsumer(_ newValue: FeedViewModelConsumer)
+    func feedItems(for demoSegment: DemoSegment) throws -> [FeedItem]
 }
 
 class FeedViewModelImpl: FeedViewModel, FeedModelConsumer {
@@ -40,5 +41,31 @@ class FeedViewModelImpl: FeedViewModel, FeedModelConsumer {
         self.viewModelConsumer = newValue
     }
     
+    func feedItems(for demoSegment: DemoSegment) throws -> [FeedItem] {
+        guard let value: [FeedItem] = self.model.feedItems[demoSegment]
+        else {
+            let message: String = "Unable to find value for key=\(demoSegment)!"
+            let error: NSError = NSError(domain: ErrorConstants.errorDomainName,
+                                         code: ErrorConstants.ErrorCode.noValueForKey,
+                                         userInfo: [
+                                            NSLocalizedDescriptionKey: message
+            ])
+            throw error
+        }
+        return value
+    }
+    
     // MARK: - FeedModelConsumer protocol
+}
+
+// MARK: - Errors
+private extension FeedViewModelImpl {
+    
+    enum ErrorConstants {
+        static let errorDomainName: String = "\(AppConstants.projectName).\(String(describing: FeedViewModelImpl.self))"
+        
+        enum ErrorCode {
+            static let noValueForKey: Int = 9001
+        }
+    }
 }
