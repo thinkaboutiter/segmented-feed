@@ -184,8 +184,8 @@ extension SegmentsViewController: UICollectionViewDelegateFlowLayout {
     private func itemSize(for collectionView: UICollectionView,
                           at indexPath: IndexPath) -> CGSize
     {
-        guard let dimensionsProvider: SegmentsCollectionViewDimentionProvider
-            = collectionView as? SegmentsCollectionViewDimentionProvider
+        guard let dimensionsProvider: SegmentsCollectionViewDimentionProvider =
+            collectionView as? SegmentsCollectionViewDimentionProvider
         else {
             let message: String = "Unable to obtain valid \(String(describing: SegmentsCollectionViewDimentionProvider.self)) object!"
             Logger.error.message(message)
@@ -218,8 +218,8 @@ extension SegmentsViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets
     {
-        guard let dimensionsProvider: CollectionViewDimensionsProvider
-            = collectionView as? CollectionViewDimensionsProvider
+        guard let dimensionsProvider: CollectionViewDimensionsProvider =
+            collectionView as? CollectionViewDimensionsProvider
         else {
             let message: String = "Unable to obtain valid \(String(describing: CollectionViewDimensionsProvider.self)) object!"
             Logger.error.message(message)
@@ -232,8 +232,8 @@ extension SegmentsViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat
     {
-        guard let dimensionsProvider: CollectionViewDimensionsProvider
-            = collectionView as? CollectionViewDimensionsProvider
+        guard let dimensionsProvider: CollectionViewDimensionsProvider =
+            collectionView as? CollectionViewDimensionsProvider
         else {
             let message: String = "Unable to obtain valid \(String(describing: CollectionViewDimensionsProvider.self)) object!"
             Logger.error.message(message)
@@ -246,8 +246,8 @@ extension SegmentsViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat
     {
-        guard let dimensionsProvider: CollectionViewDimensionsProvider
-            = collectionView as? CollectionViewDimensionsProvider
+        guard let dimensionsProvider: CollectionViewDimensionsProvider =
+            collectionView as? CollectionViewDimensionsProvider
         else {
             let message: String = "Unable to obtain valid \(String(describing: CollectionViewDimensionsProvider.self)) object!"
             Logger.error.message(message)

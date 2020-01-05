@@ -11,21 +11,6 @@ import UIKit
 // MARK: - Embedding
 extension UIViewController {
     
-    /// Caseless container for all constants and subtypes used to describe embedding.
-    private enum EmbeddingConstants {
-        static let errorDomainName: String = "UIViewController.Embedding"
-        
-        /// Caseless container of tuples containing error code and description.
-        enum ErrorCodeDescription {
-            static let parentNotNil: (code: Int, description: String)
-                = (9001, "Trying to embed a view controller that already has its parent set!")
-            static let containerViewIsNotUsedAsSuperView: (code: Int, description: String)
-                = (9002, "Passed container_view is not used as child's super_view!")
-            static let childHasDifferentParent: (code: Int, description: String)
-                = (9003, "Passed child_view_controller is not child of this view controller, that is it has different parent and can not be removed form this veiw controller!")
-        }
-    }
-    
     /// Embeds a child view controller.
     /// - Parameters:
     ///   - child: the child view controller that we want to embed.
@@ -36,10 +21,10 @@ extension UIViewController {
                positionChildViewIntoContainerView:((_ childView: UIView, _ containerView: UIView) -> Void)? = nil) throws
     {
         guard child.parent == nil else {
-            let error: NSError = NSError(domain: EmbeddingConstants.errorDomainName,
-                                         code: EmbeddingConstants.ErrorCodeDescription.parentNotNil.code,
+            let error: NSError = NSError(domain: EmbeddingError.domain,
+                                         code: EmbeddingError.CodeDescription.parentNotNil.code,
                                          userInfo: [
-                                            NSLocalizedDescriptionKey: EmbeddingConstants.ErrorCodeDescription.parentNotNil.description
+                                            NSLocalizedDescriptionKey: EmbeddingError.CodeDescription.parentNotNil.description
             ])
             throw error
         }
@@ -47,10 +32,10 @@ extension UIViewController {
         if let _ = positionChildViewIntoContainerView {
             positionChildViewIntoContainerView!(child.view, containerView)
             guard child.view.superview === containerView else {
-                let error: NSError = NSError(domain: EmbeddingConstants.errorDomainName,
-                                             code: EmbeddingConstants.ErrorCodeDescription.containerViewIsNotUsedAsSuperView.code,
+                let error: NSError = NSError(domain: EmbeddingError.domain,
+                                             code: EmbeddingError.CodeDescription.containerViewIsNotUsedAsSuperView.code,
                                              userInfo: [
-                                                NSLocalizedDescriptionKey: EmbeddingConstants.ErrorCodeDescription.containerViewIsNotUsedAsSuperView.description
+                                                NSLocalizedDescriptionKey: EmbeddingError.CodeDescription.containerViewIsNotUsedAsSuperView.description
                 ])
                 child.willMove(toParent: nil)
                 throw error
@@ -72,15 +57,30 @@ extension UIViewController {
     /// - Parameter child: the child view controller that we want to remove.
     func remove(_ child: UIViewController) throws {
         guard child.parent === self else {
-            let error: NSError = NSError(domain: EmbeddingConstants.errorDomainName,
-                                         code: EmbeddingConstants.ErrorCodeDescription.childHasDifferentParent.code,
+            let error: NSError = NSError(domain: EmbeddingError.domain,
+                                         code: EmbeddingError.CodeDescription.childHasDifferentParent.code,
                                          userInfo: [
-                                            NSLocalizedDescriptionKey: EmbeddingConstants.ErrorCodeDescription.childHasDifferentParent.description
+                                            NSLocalizedDescriptionKey: EmbeddingError.CodeDescription.childHasDifferentParent.description
             ])
             throw error
         }
         child.willMove(toParent: nil)
         child.view.removeFromSuperview()
         child.removeFromParent()
+    }
+    
+    /// Caseless container for all constants and subtypes used to describe embedding errors.
+    private enum EmbeddingError {
+        static let domain: String = "UIViewController.Embedding"
+        
+        /// Caseless container of tuples containing error code and description.
+        enum CodeDescription {
+            static let parentNotNil: (code: Int, description: String)
+                = (9001, "Trying to embed a view controller that already has its parent set!")
+            static let containerViewIsNotUsedAsSuperView: (code: Int, description: String)
+                = (9002, "Passed container_view is not used as child's super_view!")
+            static let childHasDifferentParent: (code: Int, description: String)
+                = (9003, "Passed child_view_controller is not child of this view controller, that is - it has different parent and can not be removed form this veiw controller!")
+        }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  SegmentsCollecionView.swift
+//  SegmentsCollectionView.swift
 //  segmented-feed
 //
 //  Created by Boyan Yankov on 2019-W52-29-Dec-Sun.

@@ -28,7 +28,8 @@ class SegmentsModelImpl: SegmentsModel {
     private weak var modelConsumer: SegmentsModelConsumer!
     
     // MARK: - Initialization
-    init() {
+    init(segments: [Segment]) {
+        self.segments = segments
         Logger.success.message()
     }
     
@@ -41,12 +42,9 @@ class SegmentsModelImpl: SegmentsModel {
         self.modelConsumer = newValue
     }
     
-    var segments: [Segment] {
-        let result: [Segment] = Segment.allCases
-        return result
-    }
+    let segments: [Segment]
     
-    private(set) var selectedSegment: Segment = Segment.allCases.first!
+    private(set) lazy var selectedSegment: Segment = self.segments.first!
     func setSelectedSegment(_ newValue: Segment) {
         self.selectedSegment = newValue
         Logger.cache.message().object(newValue)

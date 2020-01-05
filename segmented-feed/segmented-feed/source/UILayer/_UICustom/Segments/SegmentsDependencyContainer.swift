@@ -9,15 +9,13 @@
 import Foundation
 import SimpleLogger
 
-class SegmentsDependencyContainer: SegmentsViewControllerFactory {
-    
-    // MARK: - Properties
-    private let parent: RootDependencyContainer
+protocol SegmentsDependencyContainer: AnyObject {}
+
+class SegmentsDependencyContainerImpl: SegmentsDependencyContainer, SegmentsViewControllerFactory {
     
     // MARK: - Initialization
-    init(parent: RootDependencyContainer) {
+    init() {
         // setup
-        self.parent = parent
         Logger.success.message()
     }
     
@@ -34,7 +32,7 @@ class SegmentsDependencyContainer: SegmentsViewControllerFactory {
     }
     
     private func makeSegmentsViewModel() -> SegmentsViewModel {
-        let model: SegmentsModel = SegmentsModelImpl()
+        let model: SegmentsModel = SegmentsModelImpl(segments: DemoSegment.allCases)
         let result: SegmentsViewModel = SegmentsViewModelImpl(model: model)
         return result
     }

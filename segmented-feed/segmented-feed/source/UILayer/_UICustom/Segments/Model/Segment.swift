@@ -8,7 +8,12 @@
 
 import UIKit
 
-enum Segment: CaseIterable {
+protocol Segment {
+    var title: String { get }
+    var color: UIColor { get }
+}
+
+enum DemoSegment: CaseIterable, Segment {
     case cars
     case bananas
     case dogs
@@ -19,15 +24,15 @@ enum Segment: CaseIterable {
         let result: String
         switch self {
         case .cars:
-            result = NSLocalizedString("segment.title.cars", comment: AppConstants.LocalizedStringComment.segmentTitle)
+            result = NSLocalizedString("DemoSegment.title.cars", comment: AppConstants.LocalizedStringComment.segmentTitle)
         case .bananas:
-            result = NSLocalizedString("segment.title.bananas", comment: AppConstants.LocalizedStringComment.segmentTitle)
+            result = NSLocalizedString("DemoSegment.title.bananas", comment: AppConstants.LocalizedStringComment.segmentTitle)
         case .dogs:
-            result = NSLocalizedString("segment.title.dogs", comment: AppConstants.LocalizedStringComment.segmentTitle)
+            result = NSLocalizedString("DemoSegment.title.dogs", comment: AppConstants.LocalizedStringComment.segmentTitle)
         case .chocolates:
-            result = NSLocalizedString("segment.title.chocolates", comment: AppConstants.LocalizedStringComment.segmentTitle)
+            result = NSLocalizedString("DemoSegment.title.chocolates", comment: AppConstants.LocalizedStringComment.segmentTitle)
         case .cats:
-            result = NSLocalizedString("segment.title.cats", comment: AppConstants.LocalizedStringComment.segmentTitle)
+            result = NSLocalizedString("DemoSegment.title.cats", comment: AppConstants.LocalizedStringComment.segmentTitle)
         }
         return result
     }
