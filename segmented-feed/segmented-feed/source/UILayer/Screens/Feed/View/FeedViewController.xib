@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedViewController" customModule="segmented_feed" customModuleProvider="target">
             <connections>
+                <outlet property="feedTableView" destination="tKA-qo-8Ka" id="iAJ-fk-jok"/>
                 <outlet property="view" destination="9ZX-Up-LZK" id="Srd-rV-GFg"/>
             </connections>
         </placeholder>
@@ -17,7 +18,19 @@
         <view contentMode="scaleToFill" id="9ZX-Up-LZK">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tKA-qo-8Ka" userLabel="feed-table-view" customClass="FeedTableView" customModule="segmented_feed" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="tKA-qo-8Ka" firstAttribute="top" secondItem="FGT-jv-aoO" secondAttribute="top" id="Bx9-py-EOo"/>
+                <constraint firstItem="FGT-jv-aoO" firstAttribute="trailing" secondItem="tKA-qo-8Ka" secondAttribute="trailing" id="EYw-zo-yIG"/>
+                <constraint firstItem="FGT-jv-aoO" firstAttribute="bottom" secondItem="tKA-qo-8Ka" secondAttribute="bottom" id="KRQ-le-7kw"/>
+                <constraint firstItem="tKA-qo-8Ka" firstAttribute="leading" secondItem="FGT-jv-aoO" secondAttribute="leading" id="QQL-2c-8WE"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="FGT-jv-aoO"/>
             <point key="canvasLocation" x="100" y="-148"/>
         </view>
