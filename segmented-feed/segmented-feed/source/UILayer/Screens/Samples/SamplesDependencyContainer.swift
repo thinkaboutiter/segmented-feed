@@ -30,9 +30,14 @@ class SamplesDependencyContainerImpl: SamplesDependencyContainer, SamplesViewCon
     // MARK: - SamplesViewControllerFactory protocol
     func makeSamplesViewController() -> SamplesViewController {
         let vm: SamplesViewModel = self.makeSamplesViewModel()
-        let factory: EmbeddingDemoViewControllerFactory = EmbeddingDemoDependencyContainerImpl(parent: self)
-        let vc: SamplesViewController = SamplesViewController(viewModel: vm,
-                                                              embeddingDemoViewControllerFactory: factory)
+        let embeddingDemoVCFactory: EmbeddingDemoViewControllerFactory =
+            EmbeddingDemoDependencyContainerImpl(parent: self)
+        let feedVCFactory: FeedViewControllerFactory =
+            FeedDependencyContainerImpl(parent: self)
+        let vc: SamplesViewController =
+            SamplesViewController(viewModel: vm,
+                                  embeddingDemoViewControllerFactory: embeddingDemoVCFactory,
+                                  feedViewControllerFactory: feedVCFactory)
         return vc
     }
     

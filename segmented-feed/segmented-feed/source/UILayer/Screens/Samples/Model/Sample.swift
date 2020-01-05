@@ -11,7 +11,6 @@ import Foundation
 enum Sample: CaseIterable {
     case embeddingDemo
     case tableViewEmbedding
-    case containerControllerEmbedding
 }
 
 // MARK: - Titles
@@ -24,8 +23,6 @@ extension Sample {
             result = NSLocalizedString("Sample.title.embeddingDemo", comment: AppConstants.LocalizedStringComment.rowTitle)
         case .tableViewEmbedding:
             result = NSLocalizedString("Sample.title.tableViewEmbedding", comment: AppConstants.LocalizedStringComment.rowTitle)
-        case .containerControllerEmbedding:
-            result = NSLocalizedString("Sample.title.containerControllerEmbedding", comment: AppConstants.LocalizedStringComment.rowTitle)
         }
         return result
     }

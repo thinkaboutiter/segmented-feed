@@ -46,7 +46,19 @@ class FeedViewController: BaseViewController, FeedViewModelConsumer {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        self.configure_ui()
+    }
+}
+
+// MARK: - UI configurations
+private extension FeedViewController {
+    
+    func configure_ui() {
+        self.configure_title(&self.title)
+    }
+    
+    func configure_title(_ title: inout String?) {
+        title = NSLocalizedString("FeedViewController.title.feed",
+                                  comment: AppConstants.LocalizedStringComment.screenTitle)
     }
 }
