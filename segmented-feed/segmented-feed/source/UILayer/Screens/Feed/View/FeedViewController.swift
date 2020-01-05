@@ -18,6 +18,7 @@ class FeedViewController: BaseViewController, FeedViewModelConsumer {
     
     // MARK: - Properties
     private let viewModel: FeedViewModel
+    private let segmentsViewControllerFactory: SegmentsViewControllerFactory
     
     // MARK: - Initialization
     @available(*, unavailable, message: "Creating this view controller with `init(coder:)` is unsupported in favor of initializer dependency injection.")
@@ -30,8 +31,11 @@ class FeedViewController: BaseViewController, FeedViewModelConsumer {
         fatalError("Creating this view controller with `init(nibName:bundle:)` is unsupported in favor of dependency injection initializer.")
     }
     
-    init(viewModel: FeedViewModel) {
+    init(viewModel: FeedViewModel,
+         segmentsViewControllerFactory: SegmentsViewControllerFactory)
+    {
         self.viewModel = viewModel
+        self.segmentsViewControllerFactory = segmentsViewControllerFactory
         super.init(nibName: String(describing: FeedViewController.self), bundle: nil)
         self.viewModel.setViewModelConsumer(self)
         Logger.success.message()

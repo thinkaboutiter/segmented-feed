@@ -30,7 +30,9 @@ class FeedDependencyContainerImpl: FeedDependencyContainer, FeedViewControllerFa
     // MARK: - FeedViewControllerFactory protocol
     func makeFeedViewController() -> FeedViewController {
         let vm: FeedViewModel = self.makeFeedViewModel()
-        let vc: FeedViewController = FeedViewController(viewModel: vm)
+        let factory: SegmentsViewControllerFactory = SegmentsDependencyContainerImpl()
+        let vc: FeedViewController = FeedViewController(viewModel: vm,
+                                                        segmentsViewControllerFactory: factory)
         return vc
     }
     
