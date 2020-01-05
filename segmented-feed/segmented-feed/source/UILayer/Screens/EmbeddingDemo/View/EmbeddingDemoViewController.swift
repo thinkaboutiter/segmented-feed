@@ -106,14 +106,6 @@ private extension EmbeddingDemoViewController {
 private extension EmbeddingDemoViewController {
     
     func embedSegmentsViewController() throws {
-        guard self.segmentsViewController?.parent == nil else {
-            let error: NSError = NSError(domain: ErrorConstants.errorDomainName,
-                                         code: ErrorConstants.ErrorCodeDescription.segmentsViewControllerParentNotNil.code,
-                                         userInfo: [
-                                            NSLocalizedDescriptionKey: ErrorConstants.ErrorCodeDescription.segmentsViewControllerParentNotNil.description
-            ])
-            throw error
-        }
         self.segmentsViewController = nil
         let vc: SegmentsViewController = self.segmentsViewControllerFactory.makeSegmentsViewController(withSegmentSelectionConsumer: self)
         try self.embed(vc,
@@ -155,10 +147,8 @@ private extension EmbeddingDemoViewController {
         static let errorDomainName: String = "\(AppConstants.projectName).\(String(describing: EmbeddingDemoViewController.self))"
         
         enum ErrorCodeDescription {
-            static let segmentsViewControllerParentNotNil: (code: Int, description: String)
-                = (9001, "\(String(describing: SegmentsViewController.self)) instance has a parent view controller!")
             static let segmentsViewControllerIsNil: (code: Int, description: String)
-                = (9002, "\(String(describing: SegmentsViewController.self)) instance is nil!")
+                = (9001, "\(String(describing: SegmentsViewController.self)) instance is nil!")
         }
     }
 }
