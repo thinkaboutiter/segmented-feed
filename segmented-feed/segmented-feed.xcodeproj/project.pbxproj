@@ -37,6 +37,8 @@
 		4F8B3D3223C22B4D006E485E /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B3D3123C22B4D006E485E /* FeedViewController.swift */; };
 		4F8B3D3423C22B83006E485E /* FeedDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B3D3323C22B83006E485E /* FeedDependencyContainer.swift */; };
 		4F8B3D3623C22BF1006E485E /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F8B3D3523C22BF1006E485E /* FeedViewController.xib */; };
+		4F8B3D3923C28B0F006E485E /* FeedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B3D3823C28B0F006E485E /* FeedTableView.swift */; };
+		4F8B3D3B23C28B35006E485E /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B3D3A23C28B35006E485E /* FeedTableViewCell.swift */; };
 		4F8F801F23C01A6A0067BAEC /* SamplesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8F801E23C01A6A0067BAEC /* SamplesModel.swift */; };
 		4F8F802123C01AB20067BAEC /* SamplesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8F802023C01AB20067BAEC /* SamplesViewModel.swift */; };
 		4F8F802323C01AD70067BAEC /* SamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8F802223C01AD70067BAEC /* SamplesViewController.swift */; };
@@ -88,6 +90,8 @@
 		4F8B3D3123C22B4D006E485E /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		4F8B3D3323C22B83006E485E /* FeedDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDependencyContainer.swift; sourceTree = "<group>"; };
 		4F8B3D3523C22BF1006E485E /* FeedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
+		4F8B3D3823C28B0F006E485E /* FeedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableView.swift; sourceTree = "<group>"; };
+		4F8B3D3A23C28B35006E485E /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		4F8F801E23C01A6A0067BAEC /* SamplesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplesModel.swift; sourceTree = "<group>"; };
 		4F8F802023C01AB20067BAEC /* SamplesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplesViewModel.swift; sourceTree = "<group>"; };
 		4F8F802223C01AD70067BAEC /* SamplesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplesViewController.swift; sourceTree = "<group>"; };
@@ -380,6 +384,7 @@
 		4F8B3D2923C22486006E485E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4F8B3D3723C24110006E485E /* _customUI */,
 				4F8B3D3123C22B4D006E485E /* FeedViewController.swift */,
 				4F8B3D3523C22BF1006E485E /* FeedViewController.xib */,
 			);
@@ -392,6 +397,15 @@
 				4F8B3D2F23C22AF4006E485E /* FeedViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4F8B3D3723C24110006E485E /* _customUI */ = {
+			isa = PBXGroup;
+			children = (
+				4F8B3D3823C28B0F006E485E /* FeedTableView.swift */,
+				4F8B3D3A23C28B35006E485E /* FeedTableViewCell.swift */,
+			);
+			path = _customUI;
 			sourceTree = "<group>";
 		};
 		4F8F801A23C01A1E0067BAEC /* Samples */ = {
@@ -605,6 +619,7 @@
 				4F3803F323B5627600A765A3 /* UIViewController+Extensions.swift in Sources */,
 				4FD7B3F723BF91460026A5C0 /* EmbeddingDemoViewModel.swift in Sources */,
 				4F8B3D2E23C22A97006E485E /* FeedModel.swift in Sources */,
+				4F8B3D3923C28B0F006E485E /* FeedTableView.swift in Sources */,
 				4F38042423B8C43C00A765A3 /* BaseCollectionView.swift in Sources */,
 				4FD7B3F523BF8FD50026A5C0 /* EmbeddingDemoModel.swift in Sources */,
 				4FD7B3FD23BF92000026A5C0 /* EmbeddingDemoDependencyContainer.swift in Sources */,
@@ -612,6 +627,7 @@
 				4F38040523B7EE1D00A765A3 /* AppConstants.swift in Sources */,
 				4FD7B40023C006AF0026A5C0 /* SamplesTableView.swift in Sources */,
 				4FD7B3EC23BAB1590026A5C0 /* String+Extensions.swift in Sources */,
+				4F8B3D3B23C28B35006E485E /* FeedTableViewCell.swift in Sources */,
 				4F38040123B5828300A765A3 /* SegmentsDependencyContainer.swift in Sources */,
 				4FD7B40223C006C40026A5C0 /* SampleTableViewCell.swift in Sources */,
 				4F3803FB23B5816D00A765A3 /* SegmentsModel.swift in Sources */,
