@@ -17,6 +17,8 @@ protocol FeedViewModelConsumer: AnyObject {
 protocol FeedViewModel: AnyObject {
     func setViewModelConsumer(_ newValue: FeedViewModelConsumer)
     func feedItems(for demoSegment: DemoSegment) throws -> [FeedItem]
+    func feedItem(for indexPath: IndexPath,
+                  withing demoSegment: DemoSegment) throws -> FeedItem
 }
 
 class FeedViewModelImpl: FeedViewModel, FeedModelConsumer {
@@ -55,6 +57,25 @@ class FeedViewModelImpl: FeedViewModel, FeedModelConsumer {
         return value
     }
     
+    func feedItem(for indexPath: IndexPath,
+                  withing demoSegment: DemoSegment) throws -> FeedItem
+    {
+        let feedItems: [FeedItem] = try self.feedItems(for: demoSegment)
+        let index: Int = indexPath.row
+        let range: Range<Int> = 0..<feedItems.count
+        guard range ~= index
+        else {
+            let error: NSError = NSError(domain: ErrorConstants.errorDomainName,
+                                         code: ErrorConstants.ErrorCode.indexOutOfBounds,
+                                         userInfo: [
+                                            NSLocalizedDescriptionKey: "index=\(index) out of range=\(range)!"
+            ])
+            throw error
+        }
+        let result: FeedItem = feedItems[index]
+        return result
+    }
+    
     // MARK: - FeedModelConsumer protocol
 }
 
@@ -66,6 +87,7 @@ private extension FeedViewModelImpl {
         
         enum ErrorCode {
             static let noValueForKey: Int = 9001
+            static let indexOutOfBounds: Int = 9002
         }
     }
 }
