@@ -152,7 +152,7 @@ extension EmbeddingDemoViewController: SegmentSelectionConsumer {
 private extension EmbeddingDemoViewController {
     
     enum ErrorConstants {
-        static let errorDomainName: String = "\(AppConstants.projectName).\(String(describing: RootViewController.self))"
+        static let errorDomainName: String = "\(AppConstants.projectName).\(String(describing: EmbeddingDemoViewController.self))"
         
         enum ErrorCodeDescription {
             static let segmentsViewControllerParentNotNil: (code: Int, description: String)
