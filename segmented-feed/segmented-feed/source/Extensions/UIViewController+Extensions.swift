@@ -32,12 +32,13 @@ extension UIViewController {
         if let _ = positionChildViewIntoContainerView {
             positionChildViewIntoContainerView!(child.view, containerView)
             guard child.view.superview === containerView else {
+                child.willMove(toParent: nil)
+                child.view.removeFromSuperview()
                 let error: NSError = NSError(domain: EmbeddingError.domain,
                                              code: EmbeddingError.CodeDescription.containerViewIsNotUsedAsSuperView.code,
                                              userInfo: [
                                                 NSLocalizedDescriptionKey: EmbeddingError.CodeDescription.containerViewIsNotUsedAsSuperView.description
                 ])
-                child.willMove(toParent: nil)
                 throw error
             }
             child.didMove(toParent: self)
