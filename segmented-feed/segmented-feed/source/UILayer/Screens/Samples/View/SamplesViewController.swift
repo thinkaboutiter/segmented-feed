@@ -19,6 +19,7 @@ class SamplesViewController: BaseViewController, SamplesViewModelConsumer {
     // MARK: - Properties
     private let viewModel: SamplesViewModel
     private let embeddingDemoViewControllerFactory: EmbeddingDemoViewControllerFactory
+    private let feedViewControllerFactory: FeedViewControllerFactory
     @IBOutlet private weak var samplesTableView: SamplesTableView!
     
     // MARK: - Initialization
@@ -33,10 +34,12 @@ class SamplesViewController: BaseViewController, SamplesViewModelConsumer {
     }
     
     init(viewModel: SamplesViewModel,
-         embeddingDemoViewControllerFactory: EmbeddingDemoViewControllerFactory)
+         embeddingDemoViewControllerFactory: EmbeddingDemoViewControllerFactory,
+         feedViewControllerFactory: FeedViewControllerFactory)
     {
         self.viewModel = viewModel
         self.embeddingDemoViewControllerFactory = embeddingDemoViewControllerFactory
+        self.feedViewControllerFactory = feedViewControllerFactory
         super.init(nibName: String(describing: SamplesViewController.self), bundle: nil)
         self.viewModel.setViewModelConsumer(self)
         Logger.success.message()
@@ -128,14 +131,16 @@ extension SamplesViewController: UITableViewDelegate {
     {
         do {
             let sample: Sample = try self.viewModel.sample(for: indexPath)
+            let vc: UIViewController
             switch sample {
             case .embeddingDemo:
-                let vc: EmbeddingDemoViewController = self.embeddingDemoViewControllerFactory.makeEmbeddingDemoViewController()
-                self.navigationController?.pushViewController(vc,
-                                                              animated: true)
-            default:
-                break
+                vc = self.embeddingDemoViewControllerFactory.makeEmbeddingDemoViewController()
+            case .tableViewEmbedding:
+                vc = self.feedViewControllerFactory.makeFeedViewController()
             }
+            self.navigationController?
+                .pushViewController(vc,
+                                    animated: true)
         }
         catch let error as NSError {
             Logger.error.message().object(error)

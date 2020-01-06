@@ -32,6 +32,15 @@
 		4F38042C23B8C8A000A765A3 /* SegmentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F38042B23B8C8A000A765A3 /* SegmentCollectionViewCell.xib */; };
 		4F38042E23B8D69D00A765A3 /* CollectionViewDimensionsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F38042D23B8D69D00A765A3 /* CollectionViewDimensionsProvider.swift */; };
 		4F5EAFC423B390310024D33E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5EAFC323B390310024D33E /* Assets.xcassets */; };
+		4F8B3D2E23C22A97006E485E /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B3D2D23C22A97006E485E /* FeedModel.swift */; };
+		4F8B3D3023C22AF4006E485E /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B3D2F23C22AF4006E485E /* FeedViewModel.swift */; };
+		4F8B3D3223C22B4D006E485E /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B3D3123C22B4D006E485E /* FeedViewController.swift */; };
+		4F8B3D3423C22B83006E485E /* FeedDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B3D3323C22B83006E485E /* FeedDependencyContainer.swift */; };
+		4F8B3D3623C22BF1006E485E /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F8B3D3523C22BF1006E485E /* FeedViewController.xib */; };
+		4F8B3D3923C28B0F006E485E /* FeedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B3D3823C28B0F006E485E /* FeedTableView.swift */; };
+		4F8B3D3B23C28B35006E485E /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B3D3A23C28B35006E485E /* FeedTableViewCell.swift */; };
+		4F8B3D3D23C2906E006E485E /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B3D3C23C2906E006E485E /* FeedItem.swift */; };
+		4F8B3D3F23C29D30006E485E /* SegmentsContainerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B3D3E23C29D30006E485E /* SegmentsContainerTableViewCell.swift */; };
 		4F8F801F23C01A6A0067BAEC /* SamplesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8F801E23C01A6A0067BAEC /* SamplesModel.swift */; };
 		4F8F802123C01AB20067BAEC /* SamplesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8F802023C01AB20067BAEC /* SamplesViewModel.swift */; };
 		4F8F802323C01AD70067BAEC /* SamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8F802223C01AD70067BAEC /* SamplesViewController.swift */; };
@@ -78,6 +87,15 @@
 		4F38042D23B8D69D00A765A3 /* CollectionViewDimensionsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDimensionsProvider.swift; sourceTree = "<group>"; };
 		4F5EAFB723B3902C0024D33E /* segmented-feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "segmented-feed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5EAFC323B390310024D33E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4F8B3D2D23C22A97006E485E /* FeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
+		4F8B3D2F23C22AF4006E485E /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		4F8B3D3123C22B4D006E485E /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		4F8B3D3323C22B83006E485E /* FeedDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDependencyContainer.swift; sourceTree = "<group>"; };
+		4F8B3D3523C22BF1006E485E /* FeedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
+		4F8B3D3823C28B0F006E485E /* FeedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableView.swift; sourceTree = "<group>"; };
+		4F8B3D3A23C28B35006E485E /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		4F8B3D3C23C2906E006E485E /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		4F8B3D3E23C29D30006E485E /* SegmentsContainerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentsContainerTableViewCell.swift; sourceTree = "<group>"; };
 		4F8F801E23C01A6A0067BAEC /* SamplesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplesModel.swift; sourceTree = "<group>"; };
 		4F8F802023C01AB20067BAEC /* SamplesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplesViewModel.swift; sourceTree = "<group>"; };
 		4F8F802223C01AD70067BAEC /* SamplesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplesViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +217,7 @@
 		4F364AEC23B3998B00865533 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				4F8B3D2723C22477006E485E /* Feed */,
 				4F8F801A23C01A1E0067BAEC /* Samples */,
 				4FD7B3F023BF852A0026A5C0 /* EmbeddingDemo */,
 				4F364AED23B3998B00865533 /* Root */,
@@ -345,6 +364,54 @@
 				4F38040F23B7FD4500A765A3 /* Localizable.strings */,
 			);
 			path = "segmented-feed";
+			sourceTree = "<group>";
+		};
+		4F8B3D2723C22477006E485E /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				4F8B3D3323C22B83006E485E /* FeedDependencyContainer.swift */,
+				4F8B3D2823C2247D006E485E /* Model */,
+				4F8B3D2923C22486006E485E /* View */,
+				4F8B3D2A23C2249B006E485E /* ViewModel */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		4F8B3D2823C2247D006E485E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4F8B3D2D23C22A97006E485E /* FeedModel.swift */,
+				4F8B3D3C23C2906E006E485E /* FeedItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4F8B3D2923C22486006E485E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4F8B3D3723C24110006E485E /* _customUI */,
+				4F8B3D3123C22B4D006E485E /* FeedViewController.swift */,
+				4F8B3D3523C22BF1006E485E /* FeedViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4F8B3D2A23C2249B006E485E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4F8B3D2F23C22AF4006E485E /* FeedViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4F8B3D3723C24110006E485E /* _customUI */ = {
+			isa = PBXGroup;
+			children = (
+				4F8B3D3823C28B0F006E485E /* FeedTableView.swift */,
+				4F8B3D3A23C28B35006E485E /* FeedTableViewCell.swift */,
+				4F8B3D3E23C29D30006E485E /* SegmentsContainerTableViewCell.swift */,
+			);
+			path = _customUI;
 			sourceTree = "<group>";
 		};
 		4F8F801A23C01A1E0067BAEC /* Samples */ = {
@@ -500,6 +567,7 @@
 				4FD7B3FB23BF91C50026A5C0 /* EmbeddingDemoViewController.xib in Resources */,
 				4F38041123B7FD4500A765A3 /* Localizable.strings in Resources */,
 				4F38040323B5834600A765A3 /* SegmentsViewController.xib in Resources */,
+				4F8B3D3623C22BF1006E485E /* FeedViewController.xib in Resources */,
 				4F5EAFC423B390310024D33E /* Assets.xcassets in Resources */,
 				4F364B1223B3B1D600865533 /* LaunchScreen.storyboard in Resources */,
 				4F8F802523C01B050067BAEC /* SamplesViewController.xib in Resources */,
@@ -534,32 +602,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F8B3D3023C22AF4006E485E /* FeedViewModel.swift in Sources */,
 				4F364AFD23B39A9A00865533 /* AppDelegate.swift in Sources */,
 				4F38042123B8C27C00A765A3 /* Segment.swift in Sources */,
 				4F364AFF23B39BCC00865533 /* BaseViewController.swift in Sources */,
+				4F8B3D3F23C29D30006E485E /* SegmentsContainerTableViewCell.swift in Sources */,
 				4F364B0523B3B03600865533 /* RootViewModel.swift in Sources */,
 				4FD7B40623C006F80026A5C0 /* BaseTableView.swift in Sources */,
 				4FD7B40A23C0080D0026A5C0 /* BaseTableViewCell.swift in Sources */,
 				4F8F802123C01AB20067BAEC /* SamplesViewModel.swift in Sources */,
 				4F38042A23B8C59F00A765A3 /* SegmentCollectionViewCell.swift in Sources */,
 				4FD7B3F923BF917E0026A5C0 /* EmbeddingDemoViewController.swift in Sources */,
+				4F8B3D3223C22B4D006E485E /* FeedViewController.swift in Sources */,
 				4F3803FD23B581CF00A765A3 /* SegmentsViewModel.swift in Sources */,
 				4F8F802323C01AD70067BAEC /* SamplesViewController.swift in Sources */,
 				4FD7B40823C007330026A5C0 /* BaseNavigationController.swift in Sources */,
 				4F38042623B8C4DD00A765A3 /* BaseCollectionViewCell.swift in Sources */,
 				4F3803FF23B5822B00A765A3 /* SegmentsViewController.swift in Sources */,
+				4F8B3D3423C22B83006E485E /* FeedDependencyContainer.swift in Sources */,
 				4F38042E23B8D69D00A765A3 /* CollectionViewDimensionsProvider.swift in Sources */,
 				4F8F801F23C01A6A0067BAEC /* SamplesModel.swift in Sources */,
 				4FD7B3EF23BF824E0026A5C0 /* Sample.swift in Sources */,
 				4F3803F323B5627600A765A3 /* UIViewController+Extensions.swift in Sources */,
 				4FD7B3F723BF91460026A5C0 /* EmbeddingDemoViewModel.swift in Sources */,
+				4F8B3D2E23C22A97006E485E /* FeedModel.swift in Sources */,
+				4F8B3D3923C28B0F006E485E /* FeedTableView.swift in Sources */,
 				4F38042423B8C43C00A765A3 /* BaseCollectionView.swift in Sources */,
 				4FD7B3F523BF8FD50026A5C0 /* EmbeddingDemoModel.swift in Sources */,
 				4FD7B3FD23BF92000026A5C0 /* EmbeddingDemoDependencyContainer.swift in Sources */,
 				4F364B0823B3B07700865533 /* RootModel.swift in Sources */,
+				4F8B3D3D23C2906E006E485E /* FeedItem.swift in Sources */,
 				4F38040523B7EE1D00A765A3 /* AppConstants.swift in Sources */,
 				4FD7B40023C006AF0026A5C0 /* SamplesTableView.swift in Sources */,
 				4FD7B3EC23BAB1590026A5C0 /* String+Extensions.swift in Sources */,
+				4F8B3D3B23C28B35006E485E /* FeedTableViewCell.swift in Sources */,
 				4F38040123B5828300A765A3 /* SegmentsDependencyContainer.swift in Sources */,
 				4FD7B40223C006C40026A5C0 /* SampleTableViewCell.swift in Sources */,
 				4F3803FB23B5816D00A765A3 /* SegmentsModel.swift in Sources */,
@@ -720,6 +796,7 @@
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "$(PROJECT_NAME)/source/SupportFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -744,6 +821,7 @@
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "$(PROJECT_NAME)/source/SupportFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -10,34 +10,34 @@ import UIKit
 
 protocol Segment {
     var title: String { get }
-    var color: UIColor { get }
+    var color: UIColor? { get }
 }
 
 enum DemoSegment: CaseIterable, Segment {
-    case cars
-    case bananas
-    case dogs
-    case chocolates
-    case cats
+    case colors
+    case tropicFruits
+    case shapes
+    case vegetables
+    case planets
     
     var title: String {
         let result: String
         switch self {
-        case .cars:
-            result = NSLocalizedString("DemoSegment.title.cars", comment: AppConstants.LocalizedStringComment.segmentTitle)
-        case .bananas:
-            result = NSLocalizedString("DemoSegment.title.bananas", comment: AppConstants.LocalizedStringComment.segmentTitle)
-        case .dogs:
-            result = NSLocalizedString("DemoSegment.title.dogs", comment: AppConstants.LocalizedStringComment.segmentTitle)
-        case .chocolates:
-            result = NSLocalizedString("DemoSegment.title.chocolates", comment: AppConstants.LocalizedStringComment.segmentTitle)
-        case .cats:
-            result = NSLocalizedString("DemoSegment.title.cats", comment: AppConstants.LocalizedStringComment.segmentTitle)
+        case .colors:
+            result = NSLocalizedString("DemoSegment.title.colors", comment: AppConstants.LocalizedStringComment.segmentTitle)
+        case .tropicFruits:
+            result = NSLocalizedString("DemoSegment.title.tropicFruits", comment: AppConstants.LocalizedStringComment.segmentTitle)
+        case .shapes:
+            result = NSLocalizedString("DemoSegment.title.shapes", comment: AppConstants.LocalizedStringComment.segmentTitle)
+        case .vegetables:
+            result = NSLocalizedString("DemoSegment.title.vegetables", comment: AppConstants.LocalizedStringComment.segmentTitle)
+        case .planets:
+            result = NSLocalizedString("DemoSegment.title.planets", comment: AppConstants.LocalizedStringComment.segmentTitle)
         }
         return result
     }
     
-    var color: UIColor {
-        return .purple
+    var color: UIColor? {
+        return UIColor(named: AppConstants.CustomColorName.demoSegmentBackgroundColor)
     }
 }

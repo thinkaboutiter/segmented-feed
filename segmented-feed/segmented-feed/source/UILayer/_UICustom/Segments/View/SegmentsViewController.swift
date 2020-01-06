@@ -93,7 +93,7 @@ private extension SegmentsViewController {
     }
     
     func configue_view(_ view: UIView) {
-        view.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        view.backgroundColor = UIColor.clear
     }
     
     func configure_segmentsCollectionView(_ collectionView: UICollectionView) {

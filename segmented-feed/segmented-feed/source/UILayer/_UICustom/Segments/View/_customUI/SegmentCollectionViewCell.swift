@@ -41,7 +41,7 @@ class SegmentCollectionViewCell: BaseCollectionViewCell {
 private extension SegmentCollectionViewCell {
     
     func configure_selectionView(_ view: UIView) {
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: AppConstants.CustomColorName.demoSegmentSelectionColor)
         view.isHidden = true
     }
 }

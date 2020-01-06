@@ -17,5 +17,11 @@ enum AppConstants {
         static let segmentTitle: String = "Segment title"
         static let rowTitle: String = "Row title"
         static let screenTitle: String = "Screen title"
+        static let feedTitle: String = "Feed title"
+    }
+    
+    enum CustomColorName {
+        static let demoSegmentBackgroundColor: String = "demo-segment-background-color"
+        static let demoSegmentSelectionColor: String = "demo-segment-selection-color"
     }
 }
