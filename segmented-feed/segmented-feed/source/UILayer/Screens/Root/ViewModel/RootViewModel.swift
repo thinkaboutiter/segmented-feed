@@ -42,4 +42,3 @@ class RootViewModelImpl: RootViewModel, RootModelConsumer {
     
     // MARK: - RootModelConsumer protocol
 }
-

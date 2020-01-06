@@ -18,6 +18,7 @@ class RootViewController: BaseViewController, RootViewModelConsumer {
     
     // MARK: - Properties
     private let viewModel: RootViewModel
+    private let samplesViewControllerFactory: SamplesViewControllerFactory
     
     // MARK: - Initialization
     @available(*, unavailable, message: "Creating this view controller with `init(coder:)` is unsupported in favor of initializer dependency injection.")
@@ -30,8 +31,11 @@ class RootViewController: BaseViewController, RootViewModelConsumer {
         fatalError("Creating this view controller with `init(nibName:bundle:)` is unsupported in favor of dependency injection initializer.")
     }
     
-    init(viewModel: RootViewModel) {
+    init(viewModel: RootViewModel,
+         samplesViewControllerFactory: SamplesViewControllerFactory)
+    {
         self.viewModel = viewModel
+        self.samplesViewControllerFactory = samplesViewControllerFactory
         super.init(nibName: String(describing: RootViewController.self), bundle: nil)
         self.viewModel.setViewModelConsumer(self)
         Logger.success.message()
@@ -46,7 +50,35 @@ class RootViewController: BaseViewController, RootViewModelConsumer {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        self.configure_ui()
+        self.embed_samplesViewController()
+    }
+}
+
+// MARK: - UI configurations
+private extension RootViewController {
+    
+    func configure_ui() {
+        self.configure_title(&self.title)
+    }
+    
+    func configure_title(_ title: inout String?) {
+        title = String(describing: RootViewController.self)
+    }
+}
+
+// MARK: - Embedding
+private extension RootViewController {
+    
+    func embed_samplesViewController() {
+        let vc: SamplesViewController = self.samplesViewControllerFactory.makeSamplesViewController()
+        let nc: BaseNavigationController = BaseNavigationController(rootViewController: vc)
+        do {
+            try self.embed(nc,
+                           containerView: self.view)
+        }
+        catch let error as NSError {
+            Logger.error.message().object(error)
+        }
     }
 }
