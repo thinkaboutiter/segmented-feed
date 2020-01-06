@@ -140,14 +140,32 @@ extension FeedViewController: UITableViewDataSource {
                 Logger.error.message(message)
                 return UITableViewCell()
             }
-            do {
-                try self.embedSegmentsViewController(into: cell)
+            
+            if self.segmentsViewController.parent == nil {
+                do {
+                    try self.embedSegmentsViewController(into: cell)
+                    result = cell
+                }
+                catch let error as NSError {
+                    Logger.error.message().object(error)
+                    result = UITableViewCell()
+                }
+            }
+            else if self.segmentsViewController.view.superview !== cell {
+                do {
+                    try self.remove(self.segmentsViewController)
+                    try self.embedSegmentsViewController(into: cell)
+                    result = cell
+                }
+                catch let error as NSError {
+                    Logger.error.message().object(error)
+                    result = UITableViewCell()
+                }
+            }
+            else {
                 result = cell
             }
-            catch let error as NSError {
-                Logger.error.message().object(error)
-                result = UITableViewCell()
-            }
+            
         default:
             guard let cell: FeedTableViewCell = tableView
                 .dequeueReusableCell(withIdentifier: String(describing: FeedTableViewCell.self),
@@ -157,6 +175,7 @@ extension FeedViewController: UITableViewDataSource {
                 Logger.error.message(message)
                 return UITableViewCell()
             }
+            
             do {
                 let selectedDemoSegment: DemoSegment = try self.selectedDemoSegment()
                 let feedItem: FeedItem = try self.viewModel.feedItem(for: indexPath,
@@ -180,7 +199,7 @@ extension FeedViewController: UITableViewDelegate {
                    heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         let result: CGFloat
-        switch indexPath.row {
+        switch indexPath.section {
         case 0:
             result = UIConstants.segmentedContainerTableViewCellHeight
         default:
